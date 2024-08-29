@@ -22,6 +22,8 @@ public class PieceDogLeft
         return true;
     }
 
+    
+
     public boolean RotarPiezaIzq(){
         return true;
     }
@@ -30,7 +32,6 @@ public class PieceDogLeft
         return true;
     }
 
-    
-   
+
 
 }

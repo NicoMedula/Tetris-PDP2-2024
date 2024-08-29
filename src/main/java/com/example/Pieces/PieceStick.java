@@ -5,11 +5,13 @@ import com.example.IPiece;
 
 public class PieceStick
             implements IRotar,IPiece{
+
+    private int[][] piezas;
     
     @Override
     public boolean setPieza() {
         
-        int piezas [][] = new int[4][1];
+        piezas = new int[4][1];
 
         piezas[0][0] = 1;
         piezas[1][0] =1;

@@ -76,6 +76,45 @@ public class TetrisTest {
 
     }
 
+    @SuppressWarnings("deprecation")
+    @Test
+    public  void rotar_pieza_T_a_la_derecha_Test(){
+        
+        PieceT t1 = new PieceT();
+        int[][] matrizEsperada = {
+            {1, 1, 1},
+            {0, 1, 0}
+            
+        };
+
+        t1.setPieza();
+        t1.RotarPiezaDer();
+        t1.RotarPiezaDer();
+        
+        
+        
+        assertEquals(matrizEsperada, t1.piezas);
+    }
+
+    @SuppressWarnings("deprecation")
+    @Test
+    public  void rotar_pieza_T_a_la_izquierda_Test(){
+        
+        PieceT t1 = new PieceT();
+        int[][] matrizEsperada = {
+            {0, 1},
+            {1, 1},
+            {0, 1}
+        };
+
+        t1.setPieza();
+        t1.RotarPiezaIzq();
+
+        
+    
+        assertEquals(matrizEsperada, t1.piezas);
+    }
+
     
     
 }
