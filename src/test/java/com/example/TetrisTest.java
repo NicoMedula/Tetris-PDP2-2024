@@ -13,9 +13,5 @@ public class TetrisTest {
         assertNotNull(t1);
     }
 
-    @Test
-    public void validar_la_clase_piece_Tetris(){
-        Piece p1 = new Piece();
-        assertNotNull(p1);
-    }
+    
 }

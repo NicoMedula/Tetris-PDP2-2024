@@ -1,10 +1,11 @@
 package com.example;
 
-public class Piece {
-    
+public interface IPiece {
+
     public int piezas [][] = new int[4][3];
 
-    public void setPieza(){  
-    }
+    public void setPieza();
+    
+    
     
 }

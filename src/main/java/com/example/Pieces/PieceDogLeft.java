@@ -1,11 +1,11 @@
 package com.example.Pieces;
 
 import com.example.IRotar;
-import com.example.Piece;
+import com.example.IPiece;
 
 
-public class PieceDogLeft extends Piece
-            implements IRotar{
+public class PieceDogLeft 
+            implements IRotar,IPiece{
 
     public boolean RotarPieza(){
         return true;
@@ -14,13 +14,8 @@ public class PieceDogLeft extends Piece
     
     @Override
     public void setPieza() {
-        int pieza [][] = new int[2][3];
-        //Primer fila
-        pieza[0][0] = 1;
-        pieza[0][1] = 1;
-        pieza[0][2] = 0;
-
-        super.setPieza();
+        
+        
     }
 
 }

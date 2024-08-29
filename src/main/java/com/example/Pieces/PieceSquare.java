@@ -1,7 +1,12 @@
 package com.example.Pieces;
 
-import com.example.Piece;
+import com.example.IPiece;
 
-public class PieceSquare extends Piece{
+public class PieceSquare implements IPiece {
     
+    @Override
+    public void setPieza() {
+        
+        
+    }
 }
