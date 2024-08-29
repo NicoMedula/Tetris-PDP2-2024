@@ -9,7 +9,7 @@ public class PieceDogRight extends PieceDogLeft{
         
         //Primer fila
         piezas[0][0] = 0;
-        piezas[0][1] = 0;
+        piezas[0][1] = 1;
         piezas[0][2] = 1;
         //Segunda fila
         piezas[1][0] = 1;

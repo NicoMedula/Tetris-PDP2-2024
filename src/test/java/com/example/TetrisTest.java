@@ -7,6 +7,8 @@ import org.junit.Test;
 
 import com.example.Pieces.PieceDogLeft;
 import com.example.Pieces.PieceDogRight;
+import com.example.Pieces.PieceEleLeft;
+import com.example.Pieces.PieceEleRight;
 import com.example.Pieces.PieceSquare;
 import com.example.Pieces.PieceStick;
 import com.example.Pieces.PieceT;
@@ -59,6 +61,18 @@ public class TetrisTest {
 
         assertEquals(true, d2.setPieza());
 
+    }
+
+    @Test
+    public void crear_pieza_ele_derecha_e_izquierda_Test(){
+        
+        PieceEleRight l1 = new PieceEleRight(); 
+
+        assertEquals(true, l1.setPieza());
+
+        PieceEleLeft l2 = new PieceEleLeft();
+
+        assertEquals(true, l2.setPieza());
 
     }
     
