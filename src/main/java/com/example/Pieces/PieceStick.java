@@ -7,8 +7,9 @@ public class PieceStick
             implements IRotar,IPiece{
     
     @Override
-    public void setPieza() {
+    public boolean setPieza() {
         
+        return true;
         
     }
     public boolean RotarPieza(){

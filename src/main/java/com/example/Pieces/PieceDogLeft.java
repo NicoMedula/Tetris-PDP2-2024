@@ -13,9 +13,9 @@ public class PieceDogLeft
 
     
     @Override
-    public void setPieza() {
+    public boolean setPieza() {
         
-        
+        return true;
     }
 
 }

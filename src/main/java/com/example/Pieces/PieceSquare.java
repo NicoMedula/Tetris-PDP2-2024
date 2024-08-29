@@ -5,8 +5,8 @@ import com.example.IPiece;
 public class PieceSquare implements IPiece {
     
     @Override
-    public void setPieza() {
+    public boolean setPieza() {
         
-        
+        return true;
     }
 }

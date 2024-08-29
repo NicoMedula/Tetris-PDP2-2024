@@ -4,9 +4,9 @@ package com.example.Pieces;
 public class PieceDogRight extends PieceDogLeft{
     
     @Override
-    public void setPieza() {
+    public boolean setPieza() {
         
-        
+        return true;
     }
 
     public boolean RotarPieza(){

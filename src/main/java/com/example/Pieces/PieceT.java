@@ -8,7 +8,15 @@ public class PieceT
 
                 
     @Override
-    public void setPieza() {
+    public boolean setPieza() {
+
+        int piezas [][] = new int[4][3];
+        //Primer fila
+        piezas[0][0] = 0;
+        piezas[0][1] = 1;
+        piezas[0][2] = 1;
+
+        return true;
         
     }
     public boolean RotarPieza(){
