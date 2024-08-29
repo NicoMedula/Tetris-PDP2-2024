@@ -1,5 +1,6 @@
 package com.example.Pieces;
 
+import com.example.IRotar;
 import com.example.Piece;
 
 
