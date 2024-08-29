@@ -1,5 +1,8 @@
 package com.example.Pieces;
 
-public class PieceDogRight extends PieceDogLeft {
+public class PieceDogRight extends PieceDogLeft{
     
+
+    
+
 }
