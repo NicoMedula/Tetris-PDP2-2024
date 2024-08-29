@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import com.example.Pieces.PieceStick;
 import com.example.Pieces.PieceT;
 
 public class TetrisTest {
@@ -25,4 +26,14 @@ public class TetrisTest {
         assertEquals(true, t1.setPieza());
 
     }
+
+    @Test
+    public void crear_pieza_Stick_Test(){
+        
+        PieceStick t1 = new PieceStick();
+
+        assertEquals(true, t1.setPieza());
+
+    }
+    
 }
