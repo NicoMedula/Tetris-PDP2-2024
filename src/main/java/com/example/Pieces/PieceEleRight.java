@@ -1,9 +1,10 @@
 package com.example.Pieces;
 
 import com.example.IRotar;
+import com.example.Tetris;
 import com.example.IPiece;
 
-public class PieceEleRight 
+public class PieceEleRight extends Tetris
             implements IRotar,IPiece {
 
     @Override

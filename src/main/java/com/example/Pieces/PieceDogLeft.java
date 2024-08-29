@@ -1,10 +1,11 @@
 package com.example.Pieces;
 
 import com.example.IRotar;
+import com.example.Tetris;
 import com.example.IPiece;
 
 
-public class PieceDogLeft 
+public class PieceDogLeft extends Tetris
             implements IRotar,IPiece{
     @Override
     public boolean setPieza() {
