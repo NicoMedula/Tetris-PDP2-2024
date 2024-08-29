@@ -2,7 +2,6 @@ package com.example;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-
 import org.junit.Test;
 
 import com.example.Pieces.PieceDogLeft;
@@ -140,7 +139,40 @@ public class TetrisTest {
 
     }
 
-    
+    @SuppressWarnings("deprecation")
+    @Test
+    public  void rotar_pieza_ele_right_a_la_izquierda_y_a_la_derecha_Test(){
+        
+        //Gira a la derecha 90 grados
+        PieceEleRight l1 = new PieceEleRight();
+
+        int[][] matrizEsperada = {
+            {0, 0, 1},
+            {1, 1, 1}
+        };
+        
+        l1.setPieza();
+        l1.RotarPiezaDer();
+        
+        assertEquals(matrizEsperada, l1.piezas);
+
+
+        //Gira a la izquierda 90 grados
+        
+        PieceEleRight l2 = new PieceEleRight();
+
+        int[][] matrizEsperada2 = {
+        {1, 1, 1},
+        {1, 0, 0}
+
+        };
+
+        l2.setPieza();
+        l2.RotarPiezaIzq();
+
+        assertEquals(matrizEsperada2, l2.piezas);
+
+    }
 
     
     
