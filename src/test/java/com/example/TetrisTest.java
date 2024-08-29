@@ -115,6 +115,31 @@ public class TetrisTest {
         assertEquals(matrizEsperada, t1.piezas);
     }
 
+    @SuppressWarnings("deprecation")
+    @Test
+    public  void rotar_pieza_Stick_a_la_izquierda_y_a_la_derecha_Test(){
+        
+        PieceStick t1 = new PieceStick();
+        int[][] matrizEsperada = {
+            {1, 1, 1, 1},
+        };
+
+        t1.setPieza();
+        t1.RotarPiezaIzq();
+
+        
+    
+        assertEquals(matrizEsperada, t1.piezas);
+
+        PieceStick t2 = new PieceStick();
+
+        t2.setPieza();
+        t2.RotarPiezaDer();
+
+        assertEquals(matrizEsperada, t1.piezas);
+
+    }
+
     
     
 }
