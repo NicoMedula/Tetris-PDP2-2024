@@ -6,12 +6,6 @@ import com.example.IPiece;
 
 public class PieceDogLeft 
             implements IRotar,IPiece{
-
-    public boolean RotarPieza(){
-        return true;
-    }
-
-    
     @Override
     public boolean setPieza() {
         int piezas[][] = new int[2][3];
@@ -27,5 +21,16 @@ public class PieceDogLeft
         
         return true;
     }
+
+    public boolean RotarPiezaIzq(){
+        return true;
+    }
+    
+    public boolean RotarPiezaDer(){
+        return true;
+    }
+
+    
+   
 
 }

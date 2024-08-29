@@ -24,7 +24,10 @@ public class PieceT
         return true;
         
     }
-    public boolean RotarPieza(){
+    public boolean RotarPiezaIzq(){
+        return true;
+    }
+    public boolean RotarPiezaDer(){
         return true;
     }
 
