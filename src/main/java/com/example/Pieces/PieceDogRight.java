@@ -3,9 +3,10 @@ package com.example.Pieces;
 
 public class PieceDogRight extends PieceDogLeft{
     
+    public int piezas[][];
     @Override
     public boolean setPieza() {
-        int piezas[][] = new int[2][3];
+        piezas = new int[2][3];
         
         //Primer fila
         piezas[0][0] = 0;
@@ -19,7 +20,13 @@ public class PieceDogRight extends PieceDogLeft{
         return true;
     }
 
-    public boolean RotarPieza(){
+    public boolean RotarPiezaIzq(){
+        piezas = rotarIzquierda(piezas);
+        return true;
+    }
+
+    public boolean RotarPiezaDer(){
+        piezas = rotarDerecha(piezas);
         return true;
     }
 
