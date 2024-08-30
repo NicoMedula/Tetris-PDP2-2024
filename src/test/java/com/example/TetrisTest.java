@@ -82,6 +82,7 @@ public class TetrisTest {
     public  void rotar_pieza_T_a_la_derecha_Test(){
         //Gira a la derecha 90 grados
         
+        //Dos rotaciones
         PieceT t1 = new PieceT();
         int[][] matrizEsperada = {
             {1, 1, 1},
@@ -94,8 +95,60 @@ public class TetrisTest {
         t1.RotarPiezaDer();
         
         
-        
         assertEquals(matrizEsperada, t1.piezas);
+
+        //una rotacion
+        PieceT t2 = new PieceT();
+        int[][] matrizEsperada2 = {
+            {1, 0},
+            {1, 1},
+            {1, 0}
+        };
+
+        t2.setPieza();
+        t2.RotarPiezaDer();
+        
+        
+        
+        assertEquals(matrizEsperada2, t2.piezas);
+
+        //3 rotaciones
+        
+        PieceT t3 = new PieceT();
+        int[][] matrizEsperada3 = {
+            {0, 1},
+            {1, 1},
+            {0, 1}
+            
+        };
+
+        t3.setPieza();
+        t3.RotarPiezaDer();
+        t3.RotarPiezaDer();
+        t3.RotarPiezaDer();
+        
+        
+        assertEquals(matrizEsperada3, t3.piezas);
+        
+        //4 rotaciones
+        PieceT t4 = new PieceT();
+        int[][] matrizEsperada4 = {
+            {0, 1, 0},
+            {1, 1, 1}
+            
+        };
+
+        t4.setPieza();
+        t4.RotarPiezaDer();
+        t4.RotarPiezaDer();
+        t4.RotarPiezaDer();
+        t4.RotarPiezaDer();
+        
+        
+        assertEquals(matrizEsperada4, t4.piezas);
+        
+
+
     }
 
     @SuppressWarnings("deprecation")
@@ -103,6 +156,7 @@ public class TetrisTest {
     public  void rotar_pieza_T_a_la_izquierda_Test(){
         //Gira a la izquierda 90 grados
         
+        //una rotacion de la izquierda
         PieceT t1 = new PieceT();
         int[][] matrizEsperada = {
             {0, 1},
@@ -113,9 +167,52 @@ public class TetrisTest {
         t1.setPieza();
         t1.RotarPiezaIzq();
 
-        
-    
         assertEquals(matrizEsperada, t1.piezas);
+
+        //dos rotaciones a la izquierda
+        PieceT t2 = new PieceT();
+        int[][] matrizEsperada2 = {
+        {1,1,1},
+        {0,1,0},
+        };
+
+        t2.setPieza();
+        t2.RotarPiezaIzq();
+        t2.RotarPiezaIzq();
+
+        assertEquals(matrizEsperada2, t2.piezas);
+
+        //tres rotaciones
+        PieceT t3 = new PieceT();
+        int[][] matrizEsperada3 = {
+            {1, 0},
+            {1, 1},
+            {1, 0}
+        };
+
+        t3.setPieza();
+        t3.RotarPiezaIzq();
+        t3.RotarPiezaIzq();
+        t3.RotarPiezaIzq();
+
+        assertEquals(matrizEsperada3, t3.piezas);
+
+        PieceT t4 = new PieceT();
+        int[][] matrizEsperada4 = {
+            {0, 1, 0},
+            {1, 1, 1},
+            
+        };
+
+        t4.setPieza();
+        t4.RotarPiezaIzq();
+        t4.RotarPiezaIzq();
+        t4.RotarPiezaIzq();
+        t4.RotarPiezaIzq();
+
+        assertEquals(matrizEsperada4, t4.piezas);
+
+
     }
 
     @SuppressWarnings("deprecation") // ignora advertencias
