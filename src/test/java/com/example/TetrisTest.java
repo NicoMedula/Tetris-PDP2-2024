@@ -249,7 +249,40 @@ public class TetrisTest {
         assertEquals(matrizEsperada2, d2.piezas);
     }
 
-    
+        @SuppressWarnings("deprecation")
+        @Test
+        public  void rotar_pieza_dog_left_a_la_izquierda_y_a_la_derecha_Test(){
+        
+        //Gira a la derecha 90 grados
+        PieceDogLeft d1 = new PieceDogLeft();
+
+        int[][] matrizEsperada = {
+            {0, 1},
+            {1, 1},
+            {1, 0}
+        };
+        
+        d1.setPieza();
+        d1.RotarPiezaDer();
+        
+        assertEquals(matrizEsperada, d1.piezas);
+
+        //Gira a la izquierda 90 grados
+        
+        PieceDogLeft d2 = new PieceDogLeft();
+
+        int[][] matrizEsperada2 = {
+            {0, 1},
+            {1, 1},
+            {1, 0}
+        };
+
+        d2.setPieza();
+        d2.RotarPiezaIzq();
+
+        assertEquals(matrizEsperada2, d2.piezas);
+    }
+
     
     
 }

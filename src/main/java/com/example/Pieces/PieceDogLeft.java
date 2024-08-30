@@ -1,15 +1,18 @@
 package com.example.Pieces;
 
+import com.example.IPiece;
 import com.example.IRotar;
 import com.example.Tetris;
-import com.example.IPiece;
 
 
 public class PieceDogLeft extends Tetris
             implements IRotar,IPiece{
+
+    public int piezas[][];
+
     @Override
     public boolean setPieza() {
-        int piezas[][] = new int[2][3];
+        piezas = new int[2][3];
         
         //Primer fila
         piezas[0][0] = 1;
@@ -26,10 +29,12 @@ public class PieceDogLeft extends Tetris
     
 
     public boolean RotarPiezaIzq(){
+        piezas = rotarIzquierda(piezas);
         return true;
     }
     
     public boolean RotarPiezaDer(){
+        piezas = rotarDerecha(piezas);
         return true;
     }
 
