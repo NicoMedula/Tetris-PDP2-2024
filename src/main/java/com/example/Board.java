@@ -41,6 +41,9 @@ public class Board {
             
             case 6: pieza = new PieceDogRight(); break;
         }
+
+        
+
     }
     
     

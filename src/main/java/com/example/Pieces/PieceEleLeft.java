@@ -8,7 +8,7 @@ public class PieceEleLeft extends PieceEleRight{
     public int piezas[][];
     
     @Override
-    public boolean setPieza() {
+    public boolean getPieza() {
         piezas = new int[3][2];
         
         piezas[0][0] =0;

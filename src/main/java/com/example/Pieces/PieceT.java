@@ -10,7 +10,7 @@ public class PieceT extends Rotar
 
 
     @Override
-    public boolean setPieza() {
+    public boolean getPieza() {
 
         piezas = new int[2][3];
 

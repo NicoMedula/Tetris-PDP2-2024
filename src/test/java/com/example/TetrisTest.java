@@ -27,7 +27,7 @@ public class TetrisTest {
         
         PieceT t1 = new PieceT();
 
-        assertEquals(true, t1.setPieza());
+        assertEquals(true, t1.getPieza());
 
     }
 
@@ -36,7 +36,7 @@ public class TetrisTest {
         
         PieceStick t1 = new PieceStick();
 
-        assertEquals(true, t1.setPieza());
+        assertEquals(true, t1.getPieza());
 
     }
 
@@ -45,7 +45,7 @@ public class TetrisTest {
         
         PieceSquare s1 = new PieceSquare();
 
-        assertEquals(true, s1.setPieza());
+        assertEquals(true, s1.getPieza());
 
     }
 
@@ -55,11 +55,11 @@ public class TetrisTest {
         
         PieceDogLeft d1 = new PieceDogLeft();
 
-        assertEquals(true, d1.setPieza());
+        assertEquals(true, d1.getPieza());
 
         PieceDogRight d2 = new PieceDogRight();
 
-        assertEquals(true, d2.setPieza());
+        assertEquals(true, d2.getPieza());
 
     }
 
@@ -69,11 +69,11 @@ public class TetrisTest {
         
         PieceEleRight l1 = new PieceEleRight(); 
 
-        assertEquals(true, l1.setPieza());
+        assertEquals(true, l1.getPieza());
 
         PieceEleLeft l2 = new PieceEleLeft();
 
-        assertEquals(true, l2.setPieza());
+        assertEquals(true, l2.getPieza());
 
     }
 
@@ -90,7 +90,7 @@ public class TetrisTest {
             
         };
 
-        t1.setPieza();
+        t1.getPieza();
         t1.RotarPiezaDer();
         t1.RotarPiezaDer();
         
@@ -105,7 +105,7 @@ public class TetrisTest {
             {1, 0}
         };
 
-        t2.setPieza();
+        t2.getPieza();
         t2.RotarPiezaDer();
         
         
@@ -122,7 +122,7 @@ public class TetrisTest {
             
         };
 
-        t3.setPieza();
+        t3.getPieza();
         t3.RotarPiezaDer();
         t3.RotarPiezaDer();
         t3.RotarPiezaDer();
@@ -138,7 +138,7 @@ public class TetrisTest {
             
         };
 
-        t4.setPieza();
+        t4.getPieza();
         t4.RotarPiezaDer();
         t4.RotarPiezaDer();
         t4.RotarPiezaDer();
@@ -164,7 +164,7 @@ public class TetrisTest {
             {0, 1}
         };
 
-        t1.setPieza();
+        t1.getPieza();
         t1.RotarPiezaIzq();
 
         assertEquals(matrizEsperada, t1.piezas);
@@ -176,7 +176,7 @@ public class TetrisTest {
         {0,1,0},
         };
 
-        t2.setPieza();
+        t2.getPieza();
         t2.RotarPiezaIzq();
         t2.RotarPiezaIzq();
 
@@ -190,7 +190,7 @@ public class TetrisTest {
             {1, 0}
         };
 
-        t3.setPieza();
+        t3.getPieza();
         t3.RotarPiezaIzq();
         t3.RotarPiezaIzq();
         t3.RotarPiezaIzq();
@@ -204,7 +204,7 @@ public class TetrisTest {
             
         };
 
-        t4.setPieza();
+        t4.getPieza();
         t4.RotarPiezaIzq();
         t4.RotarPiezaIzq();
         t4.RotarPiezaIzq();
@@ -225,7 +225,7 @@ public class TetrisTest {
             {1, 1, 1, 1},
         };
 
-        t1.setPieza();
+        t1.getPieza();
         t1.RotarPiezaIzq();
 
         
@@ -234,7 +234,7 @@ public class TetrisTest {
 
         PieceStick t2 = new PieceStick();
 
-        t2.setPieza();
+        t2.getPieza();
         t2.RotarPiezaDer();
 
         assertEquals(matrizEsperada, t1.piezas);
@@ -254,7 +254,7 @@ public class TetrisTest {
             {1, 1, 1}
         };
         
-        l1.setPieza();
+        l1.getPieza();
         l1.RotarPiezaDer();
         
         assertEquals(matrizEsperada, l1.piezas);
@@ -268,7 +268,7 @@ public class TetrisTest {
             {0, 1}
         };
         
-        l12.setPieza();
+        l12.getPieza();
         l12.RotarPiezaDer();
         l12.RotarPiezaDer();
         
@@ -283,7 +283,7 @@ public class TetrisTest {
             
         };
         
-        l13.setPieza();
+        l13.getPieza();
         l13.RotarPiezaDer();
         l13.RotarPiezaDer();
         l13.RotarPiezaDer();
@@ -300,7 +300,7 @@ public class TetrisTest {
             
         };
         
-        l14.setPieza();
+        l14.getPieza();
         l14.RotarPiezaDer();
         l14.RotarPiezaDer();
         l14.RotarPiezaDer();
@@ -323,7 +323,7 @@ public class TetrisTest {
 
         };
 
-        l2.setPieza();
+        l2.getPieza();
         l2.RotarPiezaIzq();
 
         assertEquals(matrizEsperada2, l2.piezas);
@@ -338,7 +338,7 @@ public class TetrisTest {
 
         };
 
-        l22.setPieza();
+        l22.getPieza();
         l22.RotarPiezaIzq();
         l22.RotarPiezaIzq();
 
@@ -354,7 +354,7 @@ public class TetrisTest {
 
         };
 
-        l23.setPieza();
+        l23.getPieza();
         l23.RotarPiezaIzq();
         l23.RotarPiezaIzq();
         l23.RotarPiezaIzq();
@@ -372,7 +372,7 @@ public class TetrisTest {
 
         };
 
-        l24.setPieza();
+        l24.getPieza();
         l24.RotarPiezaIzq();
         l24.RotarPiezaIzq();
         l24.RotarPiezaIzq();
@@ -398,7 +398,7 @@ public class TetrisTest {
             {0, 0, 1}
         };
         
-        l1.setPieza();
+        l1.getPieza();
         l1.RotarPiezaIzq();
         
         assertEquals(matrizEsperada, l1.piezas);
@@ -414,7 +414,7 @@ public class TetrisTest {
         {1,0}
         };
 
-        l2.setPieza();
+        l2.getPieza();
         l2.RotarPiezaIzq();
         l2.RotarPiezaIzq();
     
@@ -429,7 +429,7 @@ public class TetrisTest {
             {1 ,1 ,1}
         };
 
-        l3.setPieza();
+        l3.getPieza();
         l3.RotarPiezaIzq();
         l3.RotarPiezaIzq();
         l3.RotarPiezaIzq();
@@ -445,7 +445,7 @@ public class TetrisTest {
         {1,1}
         };
 
-        l4.setPieza();
+        l4.getPieza();
         l4.RotarPiezaIzq();
         l4.RotarPiezaIzq();
         l4.RotarPiezaIzq();
@@ -470,7 +470,7 @@ public class TetrisTest {
             {1, 1, 1}
         };
         
-        l1.setPieza();
+        l1.getPieza();
         l1.RotarPiezaDer();
         
         assertEquals(matrizEsperada, l1.piezas);
@@ -484,7 +484,7 @@ public class TetrisTest {
             {1,0}
         };
         
-        l2.setPieza();
+        l2.getPieza();
         l2.RotarPiezaDer();
         l2.RotarPiezaDer();
 
@@ -498,7 +498,7 @@ public class TetrisTest {
             {0 ,0 ,1}
         };
 
-        l3.setPieza();
+        l3.getPieza();
         l3.RotarPiezaDer();
         l3.RotarPiezaDer();
         l3.RotarPiezaDer();
@@ -513,7 +513,7 @@ public class TetrisTest {
             {1,1}
         };
 
-        l4.setPieza();
+        l4.getPieza();
 
         l4.RotarPiezaDer();
         l4.RotarPiezaDer();
@@ -537,7 +537,7 @@ public class TetrisTest {
             {0, 1}
         };
         
-        d1.setPieza();
+        d1.getPieza();
         d1.RotarPiezaDer();
         
         assertEquals(matrizEsperada, d1.piezas);
@@ -552,7 +552,7 @@ public class TetrisTest {
             {0, 1}
         };
 
-        d2.setPieza();
+        d2.getPieza();
         d2.RotarPiezaIzq();
 
         assertEquals(matrizEsperada2, d2.piezas);
@@ -571,7 +571,7 @@ public class TetrisTest {
             {1, 0}
         };
         
-        d1.setPieza();
+        d1.getPieza();
         d1.RotarPiezaDer();
         
         assertEquals(matrizEsperada, d1.piezas);
@@ -586,11 +586,12 @@ public class TetrisTest {
             {1, 0}
         };
 
-        d2.setPieza();
+        d2.getPieza();
         d2.RotarPiezaIzq();
 
         assertEquals(matrizEsperada2, d2.piezas);
     }
+
 
     
     

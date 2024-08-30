@@ -9,7 +9,7 @@ public class PieceStick extends Rotar
     public int[][] piezas;
     
     @Override
-    public boolean setPieza() {
+    public boolean getPieza() {
         
         piezas = new int[4][1];
 

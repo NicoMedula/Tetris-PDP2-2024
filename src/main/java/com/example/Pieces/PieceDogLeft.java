@@ -10,7 +10,7 @@ public class PieceDogLeft extends Rotar
     public int piezas[][];
 
     @Override
-    public boolean setPieza() {
+    public boolean getPieza() {
         piezas = new int[2][3];
         
         //Primer fila

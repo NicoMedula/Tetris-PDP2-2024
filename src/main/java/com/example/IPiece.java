@@ -2,6 +2,6 @@ package com.example;
 
 public interface IPiece {
 
-    public boolean setPieza();
+    public boolean getPieza();
     
 }
