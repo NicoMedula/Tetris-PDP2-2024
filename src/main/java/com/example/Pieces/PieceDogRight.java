@@ -1,7 +1,10 @@
 package com.example.Pieces;
 
+import com.example.IPiece;
+import com.example.Rotar;
 
-public class PieceDogRight extends PieceDogLeft{
+public class PieceDogRight extends Rotar
+            implements IPiece{
     
     public int piezas[][];
     @Override

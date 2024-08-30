@@ -1,11 +1,10 @@
 package com.example.Pieces;
 
-import com.example.IRotar;
 import com.example.IPiece;
-import com.example.Tetris;
+import com.example.Rotar;
 
-public class PieceStick extends Tetris
-            implements IRotar,IPiece{
+public class PieceStick extends Rotar
+            implements IPiece{
 
     public int[][] piezas;
     
