@@ -243,9 +243,10 @@ public class TetrisTest {
 
     @SuppressWarnings("deprecation")
     @Test
-    public  void rotar_pieza_ele_right_a_la_izquierda_y_a_la_derecha_Test(){
+    public  void rotar_pieza_ele_right_a_la_derecha_Test(){
         
         //Gira a la derecha 90 grados
+        //1 rotacion
         PieceEleRight l1 = new PieceEleRight();
 
         int[][] matrizEsperada = {
@@ -257,10 +258,63 @@ public class TetrisTest {
         l1.RotarPiezaDer();
         
         assertEquals(matrizEsperada, l1.piezas);
-
-
-        //Gira a la izquierda 90 grados
         
+        //2 rotaciones
+        PieceEleRight l12 = new PieceEleRight();
+
+        int[][] matrizEsperada12 = {
+            {1, 1},
+            {0, 1},
+            {0, 1}
+        };
+        
+        l12.setPieza();
+        l12.RotarPiezaDer();
+        l12.RotarPiezaDer();
+        
+        assertEquals(matrizEsperada12, l12.piezas);
+
+        //3 rotaciones
+        PieceEleRight l13 = new PieceEleRight();
+
+        int[][] matrizEsperada13 = {
+            {1, 1, 1},
+            {1, 0, 0},
+            
+        };
+        
+        l13.setPieza();
+        l13.RotarPiezaDer();
+        l13.RotarPiezaDer();
+        l13.RotarPiezaDer();
+        
+        assertEquals(matrizEsperada13, l13.piezas);
+
+        //4 rotaciones
+        PieceEleRight l14 = new PieceEleRight();
+
+        int[][] matrizEsperada14 = {
+            {1, 0},
+            {1, 0},
+            {1, 1}
+            
+        };
+        
+        l14.setPieza();
+        l14.RotarPiezaDer();
+        l14.RotarPiezaDer();
+        l14.RotarPiezaDer();
+        l14.RotarPiezaDer();
+        
+        assertEquals(matrizEsperada14, l14.piezas);
+    }
+
+        @SuppressWarnings("deprecation")
+        @Test
+    public  void rotar_pieza_ele_right_a_la_izquierda_Test(){
+        //Gira a la izquierda 90 grados
+
+        // 1 rotacion
         PieceEleRight l2 = new PieceEleRight();
 
         int[][] matrizEsperada2 = {
@@ -273,42 +327,139 @@ public class TetrisTest {
         l2.RotarPiezaIzq();
 
         assertEquals(matrizEsperada2, l2.piezas);
+        
+        // 2 rotacion
+        PieceEleRight l22 = new PieceEleRight();
+
+        int[][] matrizEsperada22 = {
+        {1, 1},
+        {0, 1},
+        {0, 1} 
+
+        };
+
+        l22.setPieza();
+        l22.RotarPiezaIzq();
+        l22.RotarPiezaIzq();
+
+        assertEquals(matrizEsperada22, l22.piezas);
+
+        // 3 rotacion
+        PieceEleRight l23 = new PieceEleRight();
+
+        int[][] matrizEsperada23 = {
+        {0, 0, 1},
+        {1, 1, 1},
+
+
+        };
+
+        l23.setPieza();
+        l23.RotarPiezaIzq();
+        l23.RotarPiezaIzq();
+        l23.RotarPiezaIzq();
+
+        assertEquals(matrizEsperada23, l23.piezas);
+
+        // 4 rotacion
+        PieceEleRight l24 = new PieceEleRight();
+
+        int[][] matrizEsperada24 = {
+            {1, 0},
+            {1, 0},
+            {1, 1}
+
+
+        };
+
+        l24.setPieza();
+        l24.RotarPiezaIzq();
+        l24.RotarPiezaIzq();
+        l24.RotarPiezaIzq();
+        l24.RotarPiezaIzq();
+
+        assertEquals(matrizEsperada24, l24.piezas);
+
 
     }
 
 
         @SuppressWarnings("deprecation")
     @Test
-    public  void rotar_pieza_ele_left_a_la_izquierda_y_a_la_derecha_Test(){
+    public  void rotar_pieza_ele_left_a_la_izquierda_Test(){
         
         //Gira a la derecha 90 grados
+
+        //UNA ROTACION
         PieceEleLeft l1 = new PieceEleLeft();
 
         int[][] matrizEsperada = {
-            {1, 0, 0},
-            {1, 1, 1}
+            {1, 1, 1},
+            {0, 0, 1}
         };
         
         l1.setPieza();
-        l1.RotarPiezaDer();
+        l1.RotarPiezaIzq();
         
         assertEquals(matrizEsperada, l1.piezas);
 
 
-        //Gira a la izquierda 90 grados
+        //DOS ROTACIONES
         
-        PieceEleRight l2 = new PieceEleRight();
+        PieceEleLeft l2 = new PieceEleLeft();
 
         int[][] matrizEsperada2 = {
-        {1, 1, 1},
-        {1, 0, 0}
-
+        {1,1},
+        {1,0},
+        {1,0}
         };
 
         l2.setPieza();
         l2.RotarPiezaIzq();
+        l2.RotarPiezaIzq();
+    
 
         assertEquals(matrizEsperada2, l2.piezas);
+        
+        //TRES ROTACIONES
+        PieceEleLeft l3 = new PieceEleLeft();
+
+        int[][] matrizEsperada3 = {
+            {1 ,0 ,0},
+            {1 ,1 ,1}
+        };
+
+        l3.setPieza();
+        l3.RotarPiezaIzq();
+        l3.RotarPiezaIzq();
+        l3.RotarPiezaIzq();
+
+        assertEquals(matrizEsperada3, l3.piezas);
+
+        //CUATRO ROTACIONES
+        PieceEleLeft l4 = new PieceEleLeft();
+
+        int[][] matrizEsperada4 = {
+        {0,1},
+        {0,1},
+        {1,1}
+        };
+
+        l4.setPieza();
+        l4.RotarPiezaIzq();
+        l4.RotarPiezaIzq();
+        l4.RotarPiezaIzq();
+        l4.RotarPiezaIzq();
+
+        assertEquals(matrizEsperada4, l4.piezas);
+        
+
+    }
+
+    @Test
+    public  void rotar_pieza_ele_left_a_la_derecha_Test(){
+        
+
 
     }
 
