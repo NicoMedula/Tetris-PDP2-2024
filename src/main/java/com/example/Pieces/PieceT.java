@@ -24,6 +24,8 @@ public class PieceT extends Rotar
         piezas[1][1] = 1;
         piezas[1][2] = 1;
 
+    
+
         return true;
         
     }

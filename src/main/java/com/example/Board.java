@@ -10,14 +10,21 @@ import com.example.Pieces.PieceSquare;
 import com.example.Pieces.PieceStick;
 import com.example.Pieces.PieceT;
 
-public class Board {
+public class Board extends Tetris{
 
     private int board[][];
     private Random random = new Random();
     
 
     public void setBoard() {
-        board = new int[10][20];
+        board = new int[10][20]; // Filas x Columnas
+    }
+    public boolean getBoard() {
+        if (board != null) {
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public void agregarPiezaRandom(){
@@ -42,9 +49,10 @@ public class Board {
             case 6: pieza = new PieceDogRight(); break;
         }
 
-        
-
     }
+
+    
+
     
     
 }

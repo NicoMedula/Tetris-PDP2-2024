@@ -592,7 +592,21 @@ public class TetrisTest {
         assertEquals(matrizEsperada2, d2.piezas);
     }
 
+    @Test
+    public  void crear_tablero_10_x_20_Test(){
 
+        Board b1 = new Board();
+        b1.setBoard();
+
+        
+
+        assert b1.getBoard() == true;
+    }
+
+
+        
+        
+        
     
     
 }
