@@ -22,6 +22,8 @@ public class PieceEleLeft extends PieceEleRight{
         return true;
     }
 
+    
+
     public boolean RotarPiezaIzq(){
         piezas = rotarIzquierda(piezas);
         return true;

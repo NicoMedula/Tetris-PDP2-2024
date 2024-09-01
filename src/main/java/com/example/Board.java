@@ -51,7 +51,12 @@ public class Board extends Tetris{
 
     }
 
-    
+    public boolean PosicionarPiezaTablero(IPiece pieza) {
+
+        int columna = random.nextInt(20);
+        
+
+    }
 
     
     

@@ -24,6 +24,10 @@ public class PieceDogLeft extends Rotar
         
         return true;
     }
+    
+    public int[][] getForma(){
+        return piezas;
+    }
 
     
 

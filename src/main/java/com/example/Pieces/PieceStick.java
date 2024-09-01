@@ -21,6 +21,11 @@ public class PieceStick extends Rotar
         return true;
         
     }
+
+    public int[][] getForma(){
+        return piezas;
+    }
+    
     public boolean RotarPiezaIzq(){
         piezas = rotarIzquierda(piezas);
         return true;

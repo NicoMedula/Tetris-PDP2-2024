@@ -3,6 +3,7 @@ package com.example.Pieces;
 import com.example.IPiece;
 
 public class PieceSquare implements IPiece {
+    public int piezas [][];
     
     @Override
     public boolean getPieza() {
@@ -14,5 +15,9 @@ public class PieceSquare implements IPiece {
         piezas[1][1] =1;
         
         return true;
+    }
+
+    public int[][] getForma(){
+        return piezas;
     }
 }
