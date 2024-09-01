@@ -52,12 +52,42 @@ public class Board extends Tetris{
     }
 
     public boolean PosicionarPiezaTablero(IPiece pieza) {
+        pieza.getPieza();
 
         int columna = random.nextInt(20);
-        
+        int [][]forma = pieza.getForma();
 
+        if (SePuedeColocarPieza(forma, 0, columna)) {
+            for (int i = 0; i < forma.length; i++) {
+                for (int j = 0; j < forma[i].length; j++) {
+
+                    if (forma[i][j] != 0) {
+                        board[i][columna + j] = forma[i][j];
+                        
+                    }
+                
+                }
+            }
+        return true;
+
+        }else{
+            return false;
+        }
+    }   
+
+    private boolean SePuedeColocarPieza(int [][]forma,int fila, int columna) {
+
+        for(int i = 0; i < forma.length; i++) {
+            for(int j = 0; j < forma[i].length; j++) {
+                if (forma[i][j] != 0 && (columna + j >= board.length || board[fila + i][columna + j] != 0)) {
+                    return false;
+                }
+            }
+
+        }
+        return true;
+
+    
+    
     }
-
-    
-    
 }
