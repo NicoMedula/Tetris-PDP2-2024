@@ -1,6 +1,8 @@
 package com.example;
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import com.example.Pieces.PieceDogLeft;
 import com.example.Pieces.PieceDogRight;
@@ -13,7 +15,13 @@ import com.example.Pieces.PieceT;
 public class Board extends Tetris{
 
     private int board[][];
+    private IPiece piezaActual;
     private Random random = new Random();
+    private Timer tiempo; 
+    private int posicionFila =0;
+    private int posicionColumna;
+    
+
     
 
     public void setBoard() {
@@ -55,6 +63,8 @@ public class Board extends Tetris{
             case 6: pieza = new PieceDogRight(); break;
         }
 
+        piezaActual=pieza;
+        
         PosicionarPiezaTablero(pieza);
         
         return true;
@@ -100,4 +110,65 @@ public class Board extends Tetris{
         }
         return true;
     }
+
+    
+    private void iniciarReloj() {
+        tiempo = new Timer();
+        tiempo.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                bajarPieza();
+            }
+        }, 0, 2000); 
+    }
+
+    public void bajarPieza() {
+        if (piezaActual == null) {
+            iniciarReloj();
+            agregarPiezaRandom(); 
+            posicionColumna = random.nextInt(board[0].length - piezaActual.getForma()[0].length); 
+        } 
+
+        if (SePuedeColocarPieza(piezaActual.getForma(), posicionFila + 1, posicionColumna)) {
+
+            BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna); 
+
+            posicionFila++;
+
+            ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);
+
+        }else{
+            piezaActual = null;
+            
+            posicionFila = 0;
+        }
+
+        
+    }
+
+
+    private void ColocarPieza(int[][] forma, int fila, int columna) {
+        for (int i = 0; i < forma.length; i++) {
+            for (int j = 0; j < forma[i].length; j++) {
+                if (forma[i][j] != 0) {
+                    board[fila + i][columna + j] = forma[i][j];
+                }
+            }
+        }
+    }
+
+
+    private void BorrarPiezaActual(int[][] forma, int fila, int columna) {
+        for (int i = 0; i < forma.length; i++) {
+            for (int j = 0; j < forma[i].length; j++) {
+                if (forma[i][j] != 0) {
+
+                    board[fila + i][columna + j] = 0;
+                }
+            }
+        }
+    }
 }
+
+
+

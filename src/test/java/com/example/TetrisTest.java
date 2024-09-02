@@ -646,4 +646,35 @@ public class TetrisTest {
         assertTrue(piezaColocada);  
     }
 
+    @Test
+    public void la_pieza_puede_bajar_Test(){
+
+        Board b1 = new Board();
+        b1.setBoard();
+        b1.agregarPiezaRandom();    
+
+        boolean movimientoDelaPieza = false;
+
+        int[][] tableroAntesdebajarPieza = b1.getBoard();
+
+        b1.bajarPieza();
+        
+        int[][] tableroDespuesdebajarPieza = b1.getBoard();
+
+        for (int i = 0; i < tableroAntesdebajarPieza.length - 1; i++) {
+            for (int j = 0; j < tableroAntesdebajarPieza[i].length; j++) {
+
+                if (tableroAntesdebajarPieza[i][j]!=0 && tableroDespuesdebajarPieza[i+1][j]!=0) {
+                    movimientoDelaPieza = true;
+                    break;
+                }
+            }
+            if (movimientoDelaPieza) {
+                break;
+            }
+        }
+        
+        assertTrue(movimientoDelaPieza);
+    }
+
 }
