@@ -606,6 +606,22 @@ public class TetrisTest {
         assert b1.getBoard() == tablero;
     }
 
+    @Test
+    public  void inicializar_tablero_en_0_Test(){
+
+        Board b1 = new Board();
+        b1.setBoard();
+        int [][] tablero = b1.getBoard();
+
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                assertEquals(0, tablero[i][j]);
+            }
+        }
+
+
+    }
+
 
     @Test
     public  void agregar_pieza_al_tablero_Test(){
@@ -619,10 +635,11 @@ public class TetrisTest {
         b1.agregarPiezaRandom();
 
         for (int i = 0; i < tablero[0].length; i++) {
+            
             if (tablero[0][i] != 0) {
-
                 piezaColocada = true;
-                break;}
+                break;
+            }
         }
 
         assertTrue(piezaColocada);

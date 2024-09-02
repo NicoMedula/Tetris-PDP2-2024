@@ -97,6 +97,15 @@ public class Board extends Tetris{
         }
         return true;
 
+    public void limpia()
+    {
+	int i,j;
+	for (i=0; i<board[0][i]; i++)
+	    for (j=0; j<[j][0]; j++)
+		{
+		    board[i][j] = 0;
+		}
+    }
     
     
     }
