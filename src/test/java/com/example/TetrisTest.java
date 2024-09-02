@@ -1,6 +1,7 @@
 package com.example;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -598,13 +599,36 @@ public class TetrisTest {
         Board b1 = new Board();
         b1.setBoard();
 
+        int[][] tablero = b1.getBoard();
+
         
 
-        assert b1.getBoard() == true;
+        assert b1.getBoard() == tablero;
     }
 
 
+    @Test
+    public  void agregar_pieza_al_tablero_Test(){
         
+        boolean piezaColocada = false;
+
+        Board b1 = new Board();
+        b1.setBoard();
+        int [][] tablero = b1.getBoard();
+        
+        b1.agregarPiezaRandom();
+
+        for (int i = 0; i < tablero[0].length; i++) {
+            if (tablero[0][i] != 0) {
+
+                piezaColocada = true;
+                break;}
+        }
+
+        assertTrue(piezaColocada);
+
+
+    }
         
         
     

@@ -18,16 +18,22 @@ public class Board extends Tetris{
 
     public void setBoard() {
         board = new int[10][20]; // Filas x Columnas
+
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 20; j++) {
+                board[i][j] = 0;
+            }
+        }
     }
-    public boolean getBoard() {
+    public int[][] getBoard() {
         if (board != null) {
-            return true;
+            return board;
         }else{
-            return false;
+            return board;
         }
     }
 
-    public void agregarPiezaRandom(){
+    public boolean agregarPiezaRandom(){
         
         int randomPieza = random.nextInt(7);
 
@@ -48,6 +54,10 @@ public class Board extends Tetris{
             
             case 6: pieza = new PieceDogRight(); break;
         }
+
+        PosicionarPiezaTablero(pieza);
+        
+        return true;
 
     }
 
