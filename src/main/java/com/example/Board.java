@@ -168,7 +168,39 @@ public class Board extends Tetris{
             }
         }
     }
+
+    public boolean colision(IPiece pieza) {
+    int[][] forma = pieza.getForma();
+    int numFilas = forma.length;
+    int numColumnas = forma[0].length;
+
+    // Recorre cada bloque de la pieza
+    for (int i = 0; i < numFilas; i++) {
+        for (int j = 0; j < numColumnas; j++) {
+            if (forma[i][j] != 0) { // Si el bloque no es vacío
+                int x = i + posicionFila; // La posición actual en el tablero
+                int y = j + posicionColumna;
+
+                // Verifica si la pieza está fuera de los límites del tablero
+                if (x < 0 || x >= board.length || y < 0 || y >= board[0].length) {
+                    return true; // Colisión con el borde del tablero
+                }
+
+                // Verifica si hay una colisión con otras piezas en el tablero
+                if (board[x][y] != 0) {
+                    return true; // Colisión con otra pieza
+                }
+            }
+        }
+    }
+
+    return false; // No hay colisión
+    }
+
 }
+
+
+
 
 
 

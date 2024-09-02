@@ -655,16 +655,17 @@ public class TetrisTest {
 
         boolean movimientoDelaPieza = false;
 
-        int[][] tableroAntesdebajarPieza = b1.getBoard();
+        int[][] tableroAntesdeBajarPieza = b1.getBoard();
 
         b1.bajarPieza();
         
+        
         int[][] tableroDespuesdebajarPieza = b1.getBoard();
 
-        for (int i = 0; i < tableroAntesdebajarPieza.length - 1; i++) {
-            for (int j = 0; j < tableroAntesdebajarPieza[i].length; j++) {
+        for (int i = 0; i < tableroAntesdeBajarPieza.length - 1; i++) {
+            for (int j = 0; j < tableroAntesdeBajarPieza[i].length; j++) {
 
-                if (tableroAntesdebajarPieza[i][j]!=0 && tableroDespuesdebajarPieza[i+1][j]!=0) {
+                if (tableroAntesdeBajarPieza[i][j]!=0 && tableroDespuesdebajarPieza[i+1][j]!=0) {
                     movimientoDelaPieza = true;
                     break;
                 }
@@ -675,6 +676,16 @@ public class TetrisTest {
         }
         
         assertTrue(movimientoDelaPieza);
-    }
 
+        //PRIMERA FILA DEBE ESTAR CON "0" despues de bajar la pieza una vez
+
+        for (int i = 0; i < tableroDespuesdebajarPieza.length; i++) {
+            if (tableroDespuesdebajarPieza[0][i]== 0) {
+
+                assertEquals(0, tableroDespuesdebajarPieza[0][i]);
+            }
+
+        }
+    }
+    
 }
