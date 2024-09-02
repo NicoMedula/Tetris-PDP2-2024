@@ -637,12 +637,10 @@ public class TetrisTest {
         
 
         for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero[i].length; j++) {
-                if (tablero[i][j] != 0) {
+                if (tablero[0][i] != 0) {
                     piezaColocada = true;
                     break;
                 }
-            }
         }
         
         assertTrue(piezaColocada);  
