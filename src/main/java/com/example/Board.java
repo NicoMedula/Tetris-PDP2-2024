@@ -17,7 +17,6 @@ public class Board extends Tetris{
     private int board[][];
     private IPiece piezaActual;
     private Random random = new Random();
-    private Timer tiempo; 
     private int posicionFila =0;
     private int posicionColumna;
     
@@ -112,19 +111,9 @@ public class Board extends Tetris{
     }
 
     
-    private void iniciarReloj() {
-        tiempo = new Timer();
-        tiempo.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                bajarPieza();
-            }
-        }, 0, 2000); 
-    }
 
     public void bajarPieza() {
         if (piezaActual == null) {
-            iniciarReloj();
             agregarPiezaRandom(); 
             posicionColumna = random.nextInt(board[0].length - piezaActual.getForma()[0].length); 
         } 
@@ -169,34 +158,7 @@ public class Board extends Tetris{
         }
     }
 
-    public boolean colision(IPiece pieza) {
-    int[][] forma = pieza.getForma();
-    int numFilas = forma.length;
-    int numColumnas = forma[0].length;
-
-    // Recorre cada bloque de la pieza
-    for (int i = 0; i < numFilas; i++) {
-        for (int j = 0; j < numColumnas; j++) {
-            if (forma[i][j] != 0) { // Si el bloque no es vacío
-                int x = i + posicionFila; // La posición actual en el tablero
-                int y = j + posicionColumna;
-
-                // Verifica si la pieza está fuera de los límites del tablero
-                if (x < 0 || x >= board.length || y < 0 || y >= board[0].length) {
-                    return true; // Colisión con el borde del tablero
-                }
-
-                // Verifica si hay una colisión con otras piezas en el tablero
-                if (board[x][y] != 0) {
-                    return true; // Colisión con otra pieza
-                }
-            }
-        }
-    }
-
-    return false; // No hay colisión
-    }
-
+    
 }
 
 
