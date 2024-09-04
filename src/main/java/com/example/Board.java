@@ -1,8 +1,6 @@
 package com.example;
 
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import com.example.Pieces.PieceDogLeft;
 import com.example.Pieces.PieceDogRight;
@@ -12,7 +10,7 @@ import com.example.Pieces.PieceSquare;
 import com.example.Pieces.PieceStick;
 import com.example.Pieces.PieceT;
 
-public class Board extends Tetris{
+public class Board {
 
     private int board[][];
     private IPiece piezaActual;

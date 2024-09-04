@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Board.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">Board.java</span></div><h1>Board.java</h1><pre class="source lang-java linenums">package com.example;
+
+import java.util.Random;
+
+import com.example.Pieces.PieceDogLeft;
+import com.example.Pieces.PieceDogRight;
+import com.example.Pieces.PieceEleLeft;
+import com.example.Pieces.PieceEleRight;
+import com.example.Pieces.PieceSquare;
+import com.example.Pieces.PieceStick;
+import com.example.Pieces.PieceT;
+
+<span class="fc" id="L13">public class Board {</span>
+
+    private int board[][];
+    private IPiece piezaActual;
+<span class="fc" id="L17">    private Random random = new Random();</span>
+<span class="fc" id="L18">    private int posicionFila =0;</span>
+    private int posicionColumna;
+    
+
+    
+
+    public void setBoard() {
+<span class="fc" id="L25">        board = new int[10][20]; // Filas x Columnas</span>
+
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        for (int i = 0; i &lt; 10; i++) {</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">            for (int j = 0; j &lt; 20; j++) {</span>
+<span class="fc" id="L29">                board[i][j] = 0;</span>
+            }
+        }
+<span class="fc" id="L32">    }</span>
+    public int[][] getBoard() {
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">        if (board != null) {</span>
+<span class="fc" id="L35">            return board;</span>
+        }else{
+<span class="nc" id="L37">            return board;</span>
+        }
+    }
+
+    public boolean agregarPiezaRandom(){
+        
+<span class="fc" id="L43">        int randomPieza = random.nextInt(7);</span>
+
+<span class="fc" id="L45">        IPiece pieza = null;</span>
+
+<span class="pc bpc" id="L47" title="6 of 8 branches missed.">        switch(randomPieza){</span>
+<span class="fc" id="L48">            case 0: pieza = new PieceSquare(); break;</span>
+
+<span class="nc" id="L50">            case 1: pieza = new PieceT(); break;</span>
+
+<span class="fc" id="L52">            case 2: pieza = new PieceStick(); break;</span>
+
+<span class="nc" id="L54">            case 3: pieza = new PieceEleLeft(); break;</span>
+
+<span class="nc" id="L56">            case 4: pieza = new PieceEleRight(); break;</span>
+
+<span class="nc" id="L58">            case 5: pieza = new PieceDogLeft(); break;</span>
+            
+<span class="nc" id="L60">            case 6: pieza = new PieceDogRight(); break;</span>
+        }
+
+<span class="fc" id="L63">        piezaActual=pieza;</span>
+        
+<span class="fc" id="L65">        PosicionarPiezaTablero(pieza);</span>
+        
+<span class="fc" id="L67">        return true;</span>
+
+    }
+
+    public boolean PosicionarPiezaTablero(IPiece pieza) {
+<span class="fc" id="L72">        pieza.getPieza();</span>
+        
+<span class="fc" id="L74">        int [][]forma = pieza.getForma();</span>
+
+        
+<span class="fc" id="L77">        int AnchoColumna = board[0].length - forma[0].length; // siempre debe entrar en el tablero</span>
+<span class="fc" id="L78">        int columna = random.nextInt(AnchoColumna + 1);</span>
+
+<span class="pc bpc" id="L80" title="1 of 2 branches missed.">        if (SePuedeColocarPieza(forma, 0, columna)) {</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">            for (int i = 0; i &lt; forma.length; i++) {</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">                for (int j = 0; j &lt; forma[i].length; j++) {</span>
+
+<span class="pc bpc" id="L84" title="1 of 2 branches missed.">                    if (forma[i][j] != 0) {</span>
+<span class="fc" id="L85">                        board[i][columna + j] = forma[i][j];</span>
+                        
+                    }
+                
+                }
+            }
+<span class="fc" id="L91">        return true;</span>
+
+        }else{
+<span class="nc" id="L94">            return false;</span>
+        }
+    }   
+
+    private boolean SePuedeColocarPieza(int [][]forma,int fila, int columna) {
+
+<span class="fc bfc" id="L100" title="All 2 branches covered.">        for(int i = 0; i &lt; forma.length; i++) {</span>
+<span class="fc bfc" id="L101" title="All 2 branches covered.">            for(int j = 0; j &lt; forma[i].length; j++) {</span>
+<span class="pc bpc" id="L102" title="3 of 6 branches missed.">                if (forma[i][j] != 0 &amp;&amp; (columna + j &gt;= board[0].length || board[fila + i][columna + j] != 0)) {</span>
+<span class="nc" id="L103">                    return false;</span>
+                }
+            }
+
+        }
+<span class="fc" id="L108">        return true;</span>
+    }
+
+    
+
+    public void bajarPieza() {
+<span class="nc bnc" id="L114" title="All 2 branches missed.">        if (piezaActual == null) {</span>
+<span class="nc" id="L115">            agregarPiezaRandom(); </span>
+<span class="nc" id="L116">            posicionColumna = random.nextInt(board[0].length - piezaActual.getForma()[0].length); </span>
+        } 
+
+<span class="nc bnc" id="L119" title="All 2 branches missed.">        if (SePuedeColocarPieza(piezaActual.getForma(), posicionFila + 1, posicionColumna)) {</span>
+
+<span class="nc" id="L121">            BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna); </span>
+
+<span class="nc" id="L123">            posicionFila++;</span>
+
+<span class="nc" id="L125">            ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);</span>
+
+        }else{
+<span class="nc" id="L128">            piezaActual = null;</span>
+            
+<span class="nc" id="L130">            posicionFila = 0;</span>
+        }
+
+        
+<span class="nc" id="L134">    }</span>
+
+
+    private void ColocarPieza(int[][] forma, int fila, int columna) {
+<span class="nc bnc" id="L138" title="All 2 branches missed.">        for (int i = 0; i &lt; forma.length; i++) {</span>
+<span class="nc bnc" id="L139" title="All 2 branches missed.">            for (int j = 0; j &lt; forma[i].length; j++) {</span>
+<span class="nc bnc" id="L140" title="All 2 branches missed.">                if (forma[i][j] != 0) {</span>
+<span class="nc" id="L141">                    board[fila + i][columna + j] = forma[i][j];</span>
+                }
+            }
+        }
+<span class="nc" id="L145">    }</span>
+
+
+    private void BorrarPiezaActual(int[][] forma, int fila, int columna) {
+<span class="nc bnc" id="L149" title="All 2 branches missed.">        for (int i = 0; i &lt; forma.length; i++) {</span>
+<span class="nc bnc" id="L150" title="All 2 branches missed.">            for (int j = 0; j &lt; forma[i].length; j++) {</span>
+<span class="nc bnc" id="L151" title="All 2 branches missed.">                if (forma[i][j] != 0) {</span>
+
+<span class="nc" id="L153">                    board[fila + i][columna + j] = 0;</span>
+                }
+            }
+        }
+<span class="nc" id="L157">    }</span>
+
+    
+}
+
+
+
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

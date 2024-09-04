@@ -1,5 +1,6 @@
 package com.example;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -637,7 +638,7 @@ public class TetrisTest {
         
 
         for (int i = 0; i < tablero.length; i++) {
-                if (tablero[0][i] != 0) {
+                if (tablero[1][i] != 0) {
                     piezaColocada = true;
                     break;
                 }
@@ -687,5 +688,8 @@ public class TetrisTest {
 
         }
     }
+
+
+    
     
 }

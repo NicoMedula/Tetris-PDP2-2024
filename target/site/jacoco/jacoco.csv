@@ -1,0 +1,12 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+demo,com.example,Board,174,187,28,20,28,32,23,13,3,6
+demo,com.example,Reloj,4,0,0,0,2,0,2,0,2,0
+demo,com.example,Tetris,0,3,0,0,0,1,0,1,0,1
+demo,com.example,Rotar,0,87,0,8,0,15,0,7,0,3
+demo,com.example.Pieces,PieceEleLeft,0,68,0,0,0,13,0,4,0,4
+demo,com.example.Pieces,PieceEleRight,3,68,0,0,1,13,1,4,1,4
+demo,com.example.Pieces,PieceStick,0,57,0,0,0,12,0,5,0,5
+demo,com.example.Pieces,PieceDogRight,3,68,0,0,1,13,1,4,1,4
+demo,com.example.Pieces,PieceSquare,0,36,0,0,0,8,0,3,0,3
+demo,com.example.Pieces,PieceDogLeft,3,68,0,0,1,13,1,4,1,4
+demo,com.example.Pieces,PieceT,3,68,0,0,1,13,1,4,1,4
