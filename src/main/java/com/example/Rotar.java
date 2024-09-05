@@ -5,6 +5,19 @@ public class Rotar extends Tetris {
     private int columnas;
     public int piezas [][];
 
+    public int[][] getForma(){
+        return piezas;
+    }
+
+    public boolean RotarPiezaIzq(){
+        piezas = rotarIzquierda(piezas);
+        return true;
+    }
+    public boolean RotarPiezaDer(){
+        piezas = rotarDerecha(piezas);
+        return true;
+    }
+
     public int[][] rotarDerecha (int[][] pieza ){
         filas = pieza.length;
         columnas = pieza[0].length;

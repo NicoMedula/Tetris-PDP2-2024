@@ -22,23 +22,5 @@ public class PieceDogLeft extends Rotar
         
         return true;
     }
-    
-    public int[][] getForma(){
-        return piezas;
-    }
-
-    
-
-    public boolean RotarPiezaIzq(){
-        piezas = rotarIzquierda(piezas);
-        return true;
-    }
-    
-    public boolean RotarPiezaDer(){
-        piezas = rotarDerecha(piezas);
-        return true;
-    }
-
-
 
 }
