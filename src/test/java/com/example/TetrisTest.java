@@ -719,6 +719,30 @@ public class TetrisTest {
         }
     }
 
+    @Test
+    public void mover_pieza_actual_1_columna_a_la_izquierda_Test(){
+        
+        Board b1 = new Board();
+        b1.setBoard();
+
+        b1.agregarPiezaRandom();
+
+        
+        assertTrue(b1.moverPiezaaLaIzquierda());
+
+    }
+
+    @Test
+    public void mover_pieza_actual_1_columna_a_la_derecha_Test(){
+
+        Board b1 = new Board();
+        b1.setBoard();
+
+        b1.agregarPiezaRandom();
+
+        assertTrue(b1.moverPiezaaLaDerecha());
+    }
+
     // ------------------------------------------------------------------------------------------------//
     //--------------- TEST DEL Reloj----------------------------------------------------------------//
     // ------------------------------------------------------------------------------------------------//
@@ -753,7 +777,13 @@ public class TetrisTest {
         assertTrue(r1.ticReloj());
     }
 
-    
+    public void detenerPieza(){
+        Board b1 = new Board();
+        b1.setBoard();
+        b1.agregarPiezaRandom();
+
+        assertTrue(b1.detenerPieza());
+    }
 
     
 

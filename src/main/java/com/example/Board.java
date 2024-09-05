@@ -10,7 +10,7 @@ import com.example.Pieces.PieceSquare;
 import com.example.Pieces.PieceStick;
 import com.example.Pieces.PieceT;
 
-public class Board extends Tetris{
+public class Board{
 
     private int board[][];
     private IPiece piezaActual;
@@ -98,7 +98,11 @@ public class Board extends Tetris{
     }   
 
     public boolean sePuedeColocarPieza(int [][]forma,int fila, int columna) {
-
+        
+        if (fila + forma.length > board.length || columna + forma[0].length > board[0].length) {
+            return false;
+        } // se agrego esto para que siempre entre en los limites del tablero
+            
         for(int i = 0; i < forma.length; i++) {
             for(int j = 0; j < forma[i].length; j++) {
                 if (forma[i][j] != 0 && (columna + j >= board[0].length || board[fila + i][columna + j] != 0)) {
@@ -134,7 +138,6 @@ public class Board extends Tetris{
             
             posicionFila = 0;
         }
-
         
     }
 
@@ -160,8 +163,57 @@ public class Board extends Tetris{
             }
         }
     }
+    public boolean moverPiezaaLaIzquierda() {
+        if (piezaActual == null) {
+            return false; // Si no hay pieza para mover
+        }
 
-    
+        if (posicionColumna + piezaActual.getForma()[0].length < board[0].length //pregunyta si podemos mover a la izq
+        && sePuedeColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna + 1)) {
+            
+            BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna);
+
+            posicionColumna--;
+
+            ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);
+            
+            
+        }
+        return true;
+    }
+    public boolean moverPiezaaLaDerecha() {
+        
+        if (piezaActual == null) {
+            return false; // Si no hay pieza para mover
+        }
+
+        if (posicionColumna + piezaActual.getForma()[0].length < board[0].length //pregunta si se puede mover a la derecha
+        && sePuedeColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna + 1)) {
+            
+            BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna);
+
+            posicionColumna++;
+            
+            ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);
+        }
+        return true;
+    }
+
+    public boolean detenerPieza(int[][] board, int filas, int columnas,IPiece pieza){
+        int[][] formaPieza= pieza.getForma();
+        for(int i = 0; i < formaPieza.length; i++){
+            for(int j = 0; j < formaPieza[i].length; j++){
+                if(formaPieza[i][j] != 0){
+                    if (i + 1 > board.length || board[i+1][j] != 0) {
+                        return true;//la pieza ya no puede descender
+                    }
+                }
+            }
+        }
+        return false;// la pieza puede seguir moviendose, no hay bloqueo
+    }
+
+
 }
 
 

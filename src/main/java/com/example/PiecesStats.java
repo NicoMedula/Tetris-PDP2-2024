@@ -48,8 +48,5 @@ public class PiecesStats extends Tetris {
         }
         return rotada;
 
-
     }
-    
-    
 }
