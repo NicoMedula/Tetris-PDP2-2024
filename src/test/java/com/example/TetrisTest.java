@@ -625,6 +625,7 @@ public class TetrisTest {
     }
 
 
+
     @Test
     public  void agregar_pieza_al_tablero_Test(){
 
@@ -638,10 +639,15 @@ public class TetrisTest {
         
 
         for (int i = 0; i < tablero.length; i++) {
-                if (tablero[1][i] != 0) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                if (tablero[i][j] != 0) {
                     piezaColocada = true;
                     break;
                 }
+            }
+            if (piezaColocada) {
+                break;
+            }
         }
         
         assertTrue(piezaColocada);  

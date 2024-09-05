@@ -1,10 +1,13 @@
 package com.example;
 
 public class Rotar extends Tetris {
-    
+    private int filas;
+    private int columnas;
+    public int piezas [][];
+
     public int[][] rotarDerecha (int[][] pieza ){
-        int filas = pieza.length;
-        int columnas = pieza[0].length;
+        filas = pieza.length;
+        columnas = pieza[0].length;
 
         int[][] rotada = new int[columnas][filas];
         

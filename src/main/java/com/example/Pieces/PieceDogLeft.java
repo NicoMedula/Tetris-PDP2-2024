@@ -7,8 +7,6 @@ import com.example.Rotar;
 public class PieceDogLeft extends Rotar
             implements IPiece{
 
-    public int piezas[][];
-
     @Override
     public boolean getPieza() {
         piezas = new int[2][3];

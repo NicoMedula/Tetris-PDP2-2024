@@ -5,7 +5,7 @@ package com.example.Pieces;
 
 public class PieceEleLeft extends PieceEleRight{
 
-    public int piezas[][];
+    
     
     @Override
     public boolean getPieza() {

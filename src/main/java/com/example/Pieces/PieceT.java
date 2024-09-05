@@ -6,9 +6,6 @@ import com.example.Rotar;
 public class PieceT extends Rotar
             implements IPiece {
 
-    public int piezas [][];
-
-
     @Override
     public boolean getPieza() {
 

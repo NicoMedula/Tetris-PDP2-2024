@@ -10,7 +10,7 @@ import com.example.Pieces.PieceSquare;
 import com.example.Pieces.PieceStick;
 import com.example.Pieces.PieceT;
 
-public class Board {
+public class Board extends Tetris{
 
     private int board[][];
     private IPiece piezaActual;
@@ -77,7 +77,7 @@ public class Board {
         int AnchoColumna = board[0].length - forma[0].length; // siempre debe entrar en el tablero
         int columna = random.nextInt(AnchoColumna + 1);
 
-        if (SePuedeColocarPieza(forma, 0, columna)) {
+        if (sePuedeColocarPieza(forma, 0, columna)) {
             for (int i = 0; i < forma.length; i++) {
                 for (int j = 0; j < forma[i].length; j++) {
 
@@ -95,7 +95,7 @@ public class Board {
         }
     }   
 
-    private boolean SePuedeColocarPieza(int [][]forma,int fila, int columna) {
+    private boolean sePuedeColocarPieza(int [][]forma,int fila, int columna) {
 
         for(int i = 0; i < forma.length; i++) {
             for(int j = 0; j < forma[i].length; j++) {
@@ -116,7 +116,7 @@ public class Board {
             posicionColumna = random.nextInt(board[0].length - piezaActual.getForma()[0].length); 
         } 
 
-        if (SePuedeColocarPieza(piezaActual.getForma(), posicionFila + 1, posicionColumna)) {
+        if (sePuedeColocarPieza(piezaActual.getForma(), posicionFila + 1, posicionColumna)) {
 
             BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna); 
 

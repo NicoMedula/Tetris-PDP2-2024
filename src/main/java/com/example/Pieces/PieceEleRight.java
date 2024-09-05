@@ -5,8 +5,6 @@ import com.example.Rotar;
 
 public class PieceEleRight extends Rotar
             implements IPiece {
-    
-    public int piezas[][];
 
     @Override
     public boolean getPieza() {
