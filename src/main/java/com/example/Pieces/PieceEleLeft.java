@@ -1,11 +1,7 @@
 package com.example.Pieces;
 
+public class PieceEleLeft extends PieceEleRight {
 
-
-
-public class PieceEleLeft extends PieceEleRight{
-
-    
     
     @Override
     public boolean getPieza() {
@@ -21,9 +17,7 @@ public class PieceEleLeft extends PieceEleRight{
         piezas[2][1] =1;
         return true;
     }
-
     
-
     public boolean RotarPiezaIzq(){
         piezas = rotarIzquierda(piezas);
         return true;
@@ -33,4 +27,5 @@ public class PieceEleLeft extends PieceEleRight{
         piezas = rotarDerecha(piezas);
         return true;
     }
+
 }

@@ -21,7 +21,6 @@ public class PieceEleRight extends Rotar
         
         return true;
     }
-
     public int[][] getForma(){
         return piezas;
     }
