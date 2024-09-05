@@ -673,7 +673,7 @@ public class TetrisTest {
 
         assertTrue(b1.agregarPiezaRandom());
 
-        
+
     }
 
     @Test
@@ -718,5 +718,43 @@ public class TetrisTest {
 
         }
     }
+
+    // ------------------------------------------------------------------------------------------------//
+    //--------------- TEST DEL Reloj----------------------------------------------------------------//
+    // ------------------------------------------------------------------------------------------------//
+
     
+    @Test
+    public void reloj_actualiza_los_tics_Test(){
+
+        Board board = new Board();
+
+        Reloj r1 = new Reloj(board);
+
+        r1.setTic();
+        r1.setTic();
+
+        assertEquals(2, r1.getTic());
+    }
+
+    @Test
+    public void la_pieza_actual_baja_luego_de_dos_tic_Test(){
+
+        Board b1 = new Board();
+        b1.setBoard();
+        b1.agregarPiezaRandom();
+
+        
+        Reloj r1 = new Reloj(b1);
+        r1.setTic();
+        r1.setTic();
+
+
+        assertTrue(r1.ticReloj());
+    }
+
+    
+
+    
+
 }
