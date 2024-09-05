@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.example.TetrisTest
 -------------------------------------------------------------------------------
-Tests run: 19, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.071 s <<< FAILURE! - in com.example.TetrisTest
-la_pieza_puede_bajar_Test(com.example.TetrisTest)  Time elapsed: 0.016 s  <<< ERROR!
-java.lang.NullPointerException: Cannot load from object array because "forma" is null
-	at com.example.TetrisTest.la_pieza_puede_bajar_Test(TetrisTest.java:655)
-
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.086 s - in com.example.TetrisTest
