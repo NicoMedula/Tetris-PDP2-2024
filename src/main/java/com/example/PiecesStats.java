@@ -1,6 +1,7 @@
 package com.example;
 
 public class PiecesStats extends Tetris {
+
     private int filas;
     private int columnas;
     public int piezas [][];

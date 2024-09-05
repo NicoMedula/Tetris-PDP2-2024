@@ -17,9 +17,6 @@ public class Board extends Tetris{
     private Random random = new Random();
     private int posicionFila =0;
     private int posicionColumna;
-    
-
-    
 
     public void setBoard() {
         board = new int[10][20]; // Filas x Columnas
