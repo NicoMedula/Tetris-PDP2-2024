@@ -1,6 +1,6 @@
 package com.example;
 
-public class Rotar extends Tetris {
+public class PiecesStats extends Tetris {
     private int filas;
     private int columnas;
     public int piezas [][];

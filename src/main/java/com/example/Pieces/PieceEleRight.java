@@ -1,9 +1,9 @@
 package com.example.Pieces;
 
 import com.example.IPiece;
-import com.example.Rotar;
+import com.example.PiecesStats;
 
-public class PieceEleRight extends Rotar
+public class PieceEleRight extends PiecesStats
             implements IPiece {
 
     @Override

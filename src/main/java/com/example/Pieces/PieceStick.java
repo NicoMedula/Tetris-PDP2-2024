@@ -1,9 +1,9 @@
 package com.example.Pieces;
 
 import com.example.IPiece;
-import com.example.Rotar;
+import com.example.PiecesStats;
 
-public class PieceStick extends Rotar
+public class PieceStick extends PiecesStats
             implements IPiece{
 
     
