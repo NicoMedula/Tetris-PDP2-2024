@@ -6,8 +6,6 @@ import com.example.PiecesStats;
 public class PieceStick extends PiecesStats
             implements IPiece{
 
-    
-    
     @Override
     public boolean getPieza() {
         

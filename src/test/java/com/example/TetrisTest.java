@@ -666,10 +666,22 @@ public class TetrisTest {
     }
 
     @Test
+    public void probar_metodo_add_pieza_random_Test(){
+
+        Board b1 = new Board();
+        b1.setBoard();
+
+        assertTrue(b1.agregarPiezaRandom());
+
+        
+    }
+
+    @Test
     public void la_pieza_puede_bajar_Test(){
 
         Board b1 = new Board();
         b1.setBoard();
+
         b1.agregarPiezaRandom();    
 
         boolean movimientoDelaPieza = false;

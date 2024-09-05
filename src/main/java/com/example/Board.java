@@ -58,6 +58,11 @@ public class Board extends Tetris{
         }
 
         piezaActual=pieza;
+        piezaActual.getPieza();
+
+        if (piezaActual.getForma()==null) {
+            return false;
+        }
         
         PosicionarPiezaTablero(pieza);
         
@@ -110,8 +115,11 @@ public class Board extends Tetris{
     public void bajarPieza() {
         if (piezaActual == null) {
             agregarPiezaRandom(); 
+            piezaActual.getPieza();
             posicionColumna = random.nextInt(board[0].length - piezaActual.getForma()[0].length); 
         } 
+
+        piezaActual.getPieza();
 
         if (sePuedeColocarPieza(piezaActual.getForma(), posicionFila + 1, posicionColumna)) {
 
