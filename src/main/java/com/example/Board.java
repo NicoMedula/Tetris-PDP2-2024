@@ -92,7 +92,7 @@ public class Board extends Tetris{
         }
     }   
 
-    private boolean sePuedeColocarPieza(int [][]forma,int fila, int columna) {
+    public boolean sePuedeColocarPieza(int [][]forma,int fila, int columna) {
 
         for(int i = 0; i < forma.length; i++) {
             for(int j = 0; j < forma[i].length; j++) {

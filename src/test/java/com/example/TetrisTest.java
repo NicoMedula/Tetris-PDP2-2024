@@ -593,6 +593,9 @@ public class TetrisTest {
         assertEquals(matrizEsperada2, d2.piezas);
     }
 
+    // ------------------------------------------------------------------------------------------------//
+    //--------------- TEST DEL TABLERO ----------------------------------------------------------------//
+    // ------------------------------------------------------------------------------------------------//
     @Test
     public  void crear_tablero_10_x_20_Test(){
 
@@ -623,10 +626,20 @@ public class TetrisTest {
 
     }
 
+    @Test
+    public  void se_puede_agregar_pieza_metodo_Test(){
+        
+        Board b1 = new Board();
+        b1.setBoard();
 
+        PieceT p1 = new PieceT();
+
+        assertTrue(b1.PosicionarPiezaTablero(p1));
+
+    }
 
     @Test
-    public  void agregar_pieza_al_tablero_Test(){
+    public  void agregar_pieza_random_al_tablero_Test(){
 
         boolean piezaColocada = false;
         
