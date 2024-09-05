@@ -1,10 +1,10 @@
 package com.example.Pieces;
 
 import com.example.IPiece;
+import com.example.PiecesStats;
 
-public class PieceSquare implements IPiece {
-    public int piezas [][];
-    
+public class PieceSquare extends PiecesStats implements IPiece {
+
     @Override
     public boolean getPieza() {
         int piezas [][] = new int [2][2]; 
@@ -17,7 +17,4 @@ public class PieceSquare implements IPiece {
         return true;
     }
 
-    public int[][] getForma(){
-        return piezas;
-    }
 }
