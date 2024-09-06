@@ -1,5 +1,6 @@
 package com.example;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -777,14 +778,6 @@ public class TetrisTest {
         assertTrue(r1.ticReloj());
     }
 
-    public void detenerPieza(){
-        Board b1 = new Board();
-        b1.setBoard();
-        b1.agregarPiezaRandom();
 
-        assertTrue(b1.detenerPieza());
-    }
-
-    
 
 }

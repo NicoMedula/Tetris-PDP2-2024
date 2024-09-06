@@ -17,6 +17,11 @@ public class Board{
     private Random random = new Random();
     private int posicionFila =0;
     private int posicionColumna;
+    private boolean JuegoTerminado=false;
+
+    public boolean getEstadoJuego(){
+        return JuegoTerminado;
+    }
 
     public void setBoard() {
         board = new int[10][20]; // Filas x Columnas
@@ -117,6 +122,7 @@ public class Board{
     
 
     public void bajarPieza() {
+
         if (piezaActual == null) {
             agregarPiezaRandom(); 
             piezaActual.getPieza();
@@ -134,6 +140,11 @@ public class Board{
             ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);
 
         }else{
+
+            if (posicionFila==0) {
+                JuegoTerminado=true;
+            }
+            
             piezaActual = null;
             
             posicionFila = 0;
@@ -199,7 +210,7 @@ public class Board{
         return true;
     }
 
-    public boolean detenerPieza(int[][] board, int filas, int columnas,IPiece pieza){
+    public boolean detenerPieza(int filas, int columnas,IPiece pieza){
         int[][] formaPieza= pieza.getForma();
         for(int i = 0; i < formaPieza.length; i++){
             for(int j = 0; j < formaPieza[i].length; j++){
