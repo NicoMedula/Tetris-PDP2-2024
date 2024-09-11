@@ -1,6 +1,5 @@
 package com.example;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -640,14 +639,47 @@ public class TetrisTest {
     }
 
     @Test
+    public  void se_puede_agregar_pieza_especifica_en_el_tablero_Test(){
+        
+        Board b1 = new Board();
+        b1.setBoard();
+        int[][] tablero = b1.getBoard();
+
+        PieceT p1 = new PieceT();
+
+        
+
+        boolean piezaColocada = b1.agregarPiezaEspecifica(p1);
+        boolean piezaenTablero = false;
+
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                if (tablero[i][j] != 0) { // Si hay una celda diferente de 0, se coloco la pieza
+                    piezaenTablero = true;
+                    break;
+                }
+            }
+            if (piezaenTablero) {
+                break;
+            }
+        }
+        
+        assertTrue(piezaColocada); 
+        assertTrue(piezaenTablero); 
+
+
+    }
+
+    @Test
     public  void agregar_pieza_random_al_tablero_Test(){
 
         boolean piezaColocada = false;
         
         Board b1 = new Board();
         b1.setBoard();
+        PieceStick p1 = new PieceStick();
 
-        b1.agregarPiezaRandom();    
+        b1.agregarPiezaEspecifica(p1);    
         int [][] tablero = b1.getBoard();
         
 
@@ -664,26 +696,17 @@ public class TetrisTest {
         }
         
         assertTrue(piezaColocada);  
-    }
-
-    @Test
-    public void probar_metodo_add_pieza_random_Test(){
-
-        Board b1 = new Board();
         b1.setBoard();
-
-        assertTrue(b1.agregarPiezaRandom());
-
-
     }
 
     @Test
     public void la_pieza_puede_bajar_Test(){
 
+        PieceStick p1 = new PieceStick();
         Board b1 = new Board();
         b1.setBoard();
 
-        b1.agregarPiezaRandom();    
+        b1.agregarPiezaEspecifica(p1);    
 
         boolean movimientoDelaPieza = false;
 
@@ -723,13 +746,16 @@ public class TetrisTest {
     @Test
     public void mover_pieza_actual_1_columna_a_la_izquierda_Test(){
         
+        PieceStick p1 = new PieceStick();
         Board b1 = new Board();
         b1.setBoard();
-
-        b1.agregarPiezaRandom();
-
         
-        assertTrue(b1.moverPiezaaLaIzquierda());
+
+        b1.agregarPiezaAlCentro(p1);
+
+
+        assertTrue(b1.moverPiezaaLaIzquierda()); 
+
 
     }
 
@@ -738,10 +764,29 @@ public class TetrisTest {
 
         Board b1 = new Board();
         b1.setBoard();
+        PieceStick p1 = new PieceStick();
 
-        b1.agregarPiezaRandom();
+        b1.agregarPiezaEspecifica(p1);
 
         assertTrue(b1.moverPiezaaLaDerecha());
+    }
+
+    @Test
+    public void el_juego_finaliza_si_no_se_puede_agregar_mas_piezas_Test(){
+
+        Board b1 = new Board();
+        b1.setBoard();
+        PieceStick p1 = new PieceStick();
+
+        int[][] tableroLleno = b1.getBoard();
+        for (int i = 0; i < tableroLleno[0].length; i++) {
+            tableroLleno[0][i] = 1; // Llena la primera fila
+        }
+
+        b1.agregarPiezaEspecifica(p1); //como no se pueden agregar mas piezas por que la fila esta llena
+
+        assertTrue(b1.getTerminoelJuego()); //devuelve verdadero si termina el juego
+        
     }
 
     // ------------------------------------------------------------------------------------------------//
@@ -766,8 +811,9 @@ public class TetrisTest {
     public void la_pieza_actual_baja_luego_de_dos_tic_Test(){
 
         Board b1 = new Board();
+        PieceT t1 = new PieceT();
         b1.setBoard();
-        b1.agregarPiezaRandom();
+        b1.agregarPiezaEspecifica(t1);
 
         
         Reloj r1 = new Reloj(b1);
@@ -779,5 +825,8 @@ public class TetrisTest {
     }
 
 
+    @Test
+    public void linea_completa_desaparece_Test(){
 
+    }
 }

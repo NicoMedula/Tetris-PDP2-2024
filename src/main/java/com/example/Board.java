@@ -19,7 +19,7 @@ public class Board{
     private int posicionColumna;
     private boolean JuegoTerminado=false;
 
-    public boolean getEstadoJuego(){
+    public boolean getTerminoelJuego(){
         return JuegoTerminado;
     }
 
@@ -37,6 +37,22 @@ public class Board{
             return board;
         }else{
             return board;
+        }
+    }
+
+    public boolean agregarPiezaEspecifica(IPiece pieza) {
+        piezaActual = pieza;
+        piezaActual.getPieza();
+    
+        if (piezaActual.getForma() == null) {
+            return false;
+        }
+        
+        if (PosicionarPiezaTablero(pieza)) {
+            return true;
+        } else {
+            JuegoTerminado = true;
+            return false;
         }
     }
 
@@ -69,9 +85,15 @@ public class Board{
             return false;
         }
         
-        PosicionarPiezaTablero(pieza);
+        if (PosicionarPiezaTablero(pieza)) {
+            return true;
+        }else{
+            JuegoTerminado=true;
+            return false;
+        }
         
-        return true;
+        
+        
 
     }
 
@@ -79,26 +101,24 @@ public class Board{
         pieza.getPieza();
         
         int [][]forma = pieza.getForma();
-
         
-        int AnchoColumna = board[0].length - forma[0].length; // siempre debe entrar en el tablero
-        int columna = random.nextInt(AnchoColumna + 1);
-
+        // Ancho disponible en el tablero para colocar la pieza
+        int maxColumnaInicio = board[0].length - forma[0].length; // la pieza completa entre en el tablero
+        int columna = random.nextInt(maxColumnaInicio + 1);  // Coloca la pieza aleatoriamente en una columna válida
+        
+        // Verificar si la pieza puede ser colocada en la fila 0 y columna calculada
         if (sePuedeColocarPieza(forma, 0, columna)) {
             for (int i = 0; i < forma.length; i++) {
                 for (int j = 0; j < forma[i].length; j++) {
-
                     if (forma[i][j] != 0) {
                         board[i][columna + j] = forma[i][j];
-                        
                     }
-                
                 }
             }
-        return true;
-
-        }else{
-            return false;
+            return true;
+        
+        } else {
+            return false; // El juego termina si no puede colocar la pieza
         }
     }   
 
@@ -122,6 +142,7 @@ public class Board{
     
 
     public void bajarPieza() {
+        piezaActual.getForma();
 
         if (piezaActual == null) {
             agregarPiezaRandom(); 
@@ -140,11 +161,6 @@ public class Board{
             ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);
 
         }else{
-
-            if (posicionFila==0) {
-                JuegoTerminado=true;
-            }
-            
             piezaActual = null;
             
             posicionFila = 0;
@@ -175,55 +191,81 @@ public class Board{
         }
     }
     public boolean moverPiezaaLaIzquierda() {
-        if (piezaActual == null) {
-            return false; // Si no hay pieza para mover
+        if (piezaActual == null || piezaActual.getForma() == null) {
+            return false; 
         }
 
-        if (posicionColumna + piezaActual.getForma()[0].length < board[0].length //pregunyta si podemos mover a la izq
-        && sePuedeColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna + 1)) {
-            
+        if (posicionColumna > 0 && sePuedeColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna - 1)) {
             BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna);
-
             posicionColumna--;
-
             ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);
-            
-            
+            return true;
         }
-        return true;
+
+        return false;
     }
+
+
     public boolean moverPiezaaLaDerecha() {
         
         if (piezaActual == null) {
-            return false; // Si no hay pieza para mover
+            return false; 
         }
 
-        if (posicionColumna + piezaActual.getForma()[0].length < board[0].length //pregunta si se puede mover a la derecha
-        && sePuedeColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna + 1)) {
-            
+        if (posicionColumna + piezaActual.getForma()[0].length < board[0].length 
+            && sePuedeColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna + 1)) {
             BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna);
-
             posicionColumna++;
-            
             ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);
+            return true;
         }
-        return true;
+        return false;
     }
 
     public boolean detenerPieza(int filas, int columnas,IPiece pieza){
-        int[][] formaPieza= pieza.getForma();
-        for(int i = 0; i < formaPieza.length; i++){
-            for(int j = 0; j < formaPieza[i].length; j++){
-                if(formaPieza[i][j] != 0){
-                    if (i + 1 > board.length || board[i+1][j] != 0) {
-                        return true;//la pieza ya no puede descender
+        if (piezaActual == null) {
+            return false;
+        }
+
+        int[][] formaPieza = piezaActual.getForma();
+        for (int i = 0; i < formaPieza.length; i++) {
+            for (int j = 0; j < formaPieza[i].length; j++) {
+
+                if (formaPieza[i][j] != 0) {
+                    
+                    if (posicionFila + i + 1 >= board.length|| board[posicionFila + i + 1][posicionColumna + j] != 0) {
+                        return true; // La pieza ya no puede descender
                     }
                 }
             }
         }
-        return false;// la pieza puede seguir moviendose, no hay bloqueo
+        return false; // La pieza puede seguir moviéndosedose, no hay bloqueo
     }
 
+
+    public boolean agregarPiezaAlCentro(IPiece pieza) {
+        piezaActual = pieza; 
+        piezaActual.getPieza(); 
+    
+        if (piezaActual.getForma() == null) {
+            return false; 
+        }
+    
+        int[][] forma = piezaActual.getForma();
+        
+        
+        int columnaCentro = (board[0].length / 2) - (forma[0].length / 2);//columna central para la pieza
+            
+              
+        if (sePuedeColocarPieza(forma, 0, columnaCentro)) {  // Verifica si la pieza puede ser colocada en la fila 0 y columna calculada
+            posicionFila = 0; 
+            posicionColumna = columnaCentro; // Posiciona la columna en el centro
+            ColocarPieza(forma, posicionFila, posicionColumna); // Coloca la pieza en el tablero
+            return true;
+        } else {
+            return false; // Si no se puede colocar
+        }
+    }
 
 }
 
