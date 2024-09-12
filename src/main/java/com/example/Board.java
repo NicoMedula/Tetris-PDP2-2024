@@ -32,7 +32,7 @@ public class Board{
             }
         }
     }
-    public int[][] getBoard() { 
+    public int[][] getBoard() {
             return board;
         
     }
@@ -93,6 +93,12 @@ public class Board{
     }
 
     public boolean PosicionarPiezaTablero(IPiece pieza) {
+
+        if (piezaActual==null || piezaActual.getForma()==null)  {
+            agregarPiezaRandom();
+        }
+        
+        // Obtener forma de la pieza
         pieza.getPieza();
         
         int [][]forma = pieza.getForma();
@@ -137,6 +143,17 @@ public class Board{
     
 
     public void bajarPieza() {
+        
+        if (piezaActual == null) {
+            agregarPiezaRandom(); // Si no hay una pieza actual, agrega una pieza aleatoria.
+            piezaActual.getPieza(); 
+            if (piezaActual == null || piezaActual.getForma() == null) {
+                // Si después de intentar agregar una pieza, sigue siendo nula o su forma es nula, salimos.
+                return;
+            }
+            posicionColumna = random.nextInt(board[0].length - piezaActual.getForma()[0].length); 
+        }
+    
         piezaActual.getPieza(); 
     
         if (sePuedeColocarPieza(piezaActual.getForma(), posicionFila + 1, posicionColumna)) {
@@ -170,6 +187,9 @@ public class Board{
         }
     }
     public boolean moverPiezaaLaIzquierda() {
+        if (piezaActual == null || piezaActual.getForma() == null) {
+            return false; 
+        }
 
         if (posicionColumna > 0 && sePuedeColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna - 1)) {
             BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna);
@@ -183,7 +203,6 @@ public class Board{
 
 
     public boolean moverPiezaaLaDerecha() {
-        
 
         if (posicionColumna + piezaActual.getForma()[0].length < board[0].length 
             && sePuedeColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna + 1)) {
@@ -209,7 +228,7 @@ public class Board{
                 }
             }
         }
-        return false; // La pieza puede seguir moviéndosedose, no hay bloqueo
+        return false; // La pieza puede descender
     }
 
 

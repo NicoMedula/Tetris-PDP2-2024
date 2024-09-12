@@ -664,7 +664,7 @@ public class TetrisTest {
     }
 
     @Test
-    public void se_detiene_pieza_metodo_Test(){
+    public void se_detiene_pieza_metodo_true_Test(){
 
         Board b1 = new Board();
         b1.setBoard();
@@ -674,11 +674,31 @@ public class TetrisTest {
         b1.agregarPiezaRandom();
 
         for(int i=0; i<10; i++){
+
             
             b1.bajarPieza();
         }
 
         assertTrue(b1.detenerPieza(0, 0,p1 ));
+    }
+
+    @Test
+    public void se_detiene_pieza_metodo_false_Test(){
+        int filas = 10;
+        int columnas = 5;
+
+        PieceT p1 = new PieceT();
+
+        Board b1 = new Board();
+        b1.setBoard();
+
+        b1.agregarPiezaEspecifica(p1);
+
+        boolean resultado = b1.detenerPieza(filas, columnas, p1);
+
+        assertFalse(resultado);
+
+
     }
 
 
