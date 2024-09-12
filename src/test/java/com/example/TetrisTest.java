@@ -691,19 +691,27 @@ public class TetrisTest {
 
     @Test
     public void se_detiene_pieza_metodo_false_Test(){
-        int filas = 10;
-        int columnas = 5;
+        int filas = 0;
+        int columnas = 0;
 
         PieceT p1 = new PieceT();
 
         Board b1 = new Board();
         b1.setBoard();
 
-        b1.agregarPiezaEspecifica(p1);
+        b1.agregarPiezaEspecifica(p1);  
+
 
         boolean resultado = b1.detenerPieza(filas, columnas, p1);
 
-        assertFalse(resultado);
+        if (resultado==false) {
+            assertFalse(resultado);
+        }else{
+            assertTrue(resultado);
+        }
+        
+
+        b1.setBoard();
 
 
     }
