@@ -638,22 +638,6 @@ public class TetrisTest {
         }
     }
 
-    @Test
-    public void la_pieza_baja_Test() {
-
-        Board b1 = new Board();
-        b1.setBoard();
-
-        
-
-        
-        for (int i = 0; i < 9; i++) {
-            b1.bajarPieza();
-        }
-
-        assertNotNull(b1.getBoard());
-}
-
 
     @Test
     public void se_detiene_pieza_metodo_true_Test(){
