@@ -46,7 +46,7 @@ public class Board{
     piezaActual.getPieza();
 
     
-    if (PosicionarPiezaTablero(pieza)) {
+    if (PosicionarPiezaTablero(piezaActual)) {
         return true; // Si se posiciona correctamente, retorna true
     } else {
         JuegoTerminado = true; // Termina el juego si no se puede agregar la pieza
@@ -80,11 +80,11 @@ public class Board{
         piezaActual.getPieza();
         
       // Intenta posicionar la pieza en el tablero
-        if (PosicionarPiezaTablero(pieza)) {
+        if (PosicionarPiezaTablero(piezaActual)) {
             return true;
         } else {
             JuegoTerminado = true;
-        return false;
+            return false;
         }
     }
 
