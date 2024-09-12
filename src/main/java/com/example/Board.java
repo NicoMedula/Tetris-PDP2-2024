@@ -40,20 +40,22 @@ public class Board{
         }
     }
 
+
     public boolean agregarPiezaEspecifica(IPiece pieza) {
-        piezaActual = pieza;
-        piezaActual.getPieza();
     
-        if (piezaActual.getForma() == null) {
-            return false;
-        }
-        
-        if (PosicionarPiezaTablero(pieza)) {
-            return true;
-        } else {
-            JuegoTerminado = true;
-            return false;
-        }
+    piezaActual = pieza;
+    piezaActual.getPieza();
+    
+    if (piezaActual.getForma() == null) {
+        return false; // Si no hay forma, no puede agregarse la pieza
+    }
+    
+    if (PosicionarPiezaTablero(pieza)) {
+        return true; // Si se posiciona correctamente, retorna true
+    } else {
+        JuegoTerminado = true; // Termina el juego si no se puede agregar la pieza
+        return false;
+    }
     }
 
     public boolean agregarPiezaRandom(){
@@ -142,31 +144,29 @@ public class Board{
     
 
     public void bajarPieza() {
-        piezaActual.getForma();
-
+        
         if (piezaActual == null) {
-            agregarPiezaRandom(); 
-            piezaActual.getPieza();
+            agregarPiezaRandom(); // Si no hay una pieza actual, agrega una pieza aleatoria.
+            piezaActual.getPieza(); 
+            if (piezaActual == null || piezaActual.getForma() == null) {
+                // Si después de intentar agregar una pieza, sigue siendo nula o su forma es nula, salimos.
+                return;
+            }
             posicionColumna = random.nextInt(board[0].length - piezaActual.getForma()[0].length); 
-        } 
-
-        piezaActual.getPieza();
-
+        }
+    
+        piezaActual.getPieza(); 
+    
         if (sePuedeColocarPieza(piezaActual.getForma(), posicionFila + 1, posicionColumna)) {
-
             BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna); 
-
             posicionFila++;
-
             ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);
-
-        }else{
+        } else {
             piezaActual = null;
-            
             posicionFila = 0;
         }
-        
     }
+    
 
 
     private void ColocarPieza(int[][] forma, int fila, int columna) {
@@ -256,7 +256,6 @@ public class Board{
         
         int columnaCentro = (board[0].length / 2) - (forma[0].length / 2);//columna central para la pieza
             
-              
         if (sePuedeColocarPieza(forma, 0, columnaCentro)) {  // Verifica si la pieza puede ser colocada en la fila 0 y columna calculada
             posicionFila = 0; 
             posicionColumna = columnaCentro; // Posiciona la columna en el centro
@@ -266,6 +265,7 @@ public class Board{
             return false; // Si no se puede colocar
         }
     }
+
 
 }
 

@@ -596,6 +596,19 @@ public class TetrisTest {
     // ------------------------------------------------------------------------------------------------//
     //--------------- TEST DEL TABLERO ----------------------------------------------------------------//
     // ------------------------------------------------------------------------------------------------//
+
+    @Test
+    public  void metodo_tablero_devolver_get_Test(){
+
+        Board b1 = new Board();
+        b1.setBoard();
+
+        int[][] boarEsperado= new int[10][20];
+
+        assertEquals(boarEsperado, b1.getBoard());
+
+    }
+
     @Test
     public  void crear_tablero_10_x_20_Test(){
 
@@ -638,6 +651,27 @@ public class TetrisTest {
 
     }
 
+    //@Test
+    //public  void se_detiene_pieza_metodo_Test(){
+//
+    //    Board b1 = new Board();
+    //    b1.setBoard();
+    //    
+    //    PieceSquare pieza = new PieceSquare();
+//
+    //    b1.agregarPiezaEspecifica(pieza);
+//
+    //    for(int i=0; i<10; i++){
+    //        
+    //        b1.bajarPieza();
+    //    }
+//
+    //    assertTrue(b1.detenerPieza(0, 0, pieza));
+
+
+
+    //}
+
     @Test
     public  void se_puede_agregar_pieza_especifica_en_el_tablero_Test(){
         
@@ -679,7 +713,7 @@ public class TetrisTest {
         b1.setBoard();
         PieceStick p1 = new PieceStick();
 
-        b1.agregarPiezaEspecifica(p1);    
+        b1.agregarPiezaRandom();    
         int [][] tablero = b1.getBoard();
         
 
@@ -825,8 +859,47 @@ public class TetrisTest {
     }
 
 
-    @Test
-    public void linea_completa_desaparece_Test(){
-
-    }
+    //@Test
+    //public void linea_completa_desaparece_Test(){
+//
+    //    Board b1 = new Board();
+    //    b1.setBoard();
+//
+    //    int[][] tablero = b1.getBoard();
+    //    int filas= tablero.length;
+    //    int columnas = tablero[0].length;
+//
+    //    //rellenar la ultima fila
+    //    for( int col = 0; col < columnas; col++){ 
+    //        tablero[filas -1][col] = 1; //llenamos la ultima fila con piezas
+    //    }
+//
+    //    //para verificar la fila llena
+    //    boolean filaCompleta = true;
+    //    
+    //    for(int col = 0; col < columnas ; col++){
+//
+    //        if(tablero[filas-1][col]==0){
+    //            filaCompleta = false;
+    //            break;
+    //        }
+    //    }
+//
+    //    assertTrue(filaCompleta);
+//
+    //    //metodo para verificar las lineas completas
+    //    b1.verificarYEliminarLineasCompletas();
+//
+    //    for(int col = 0; col < columnas; col++){
+    //        assertEquals(0,tablero[filas - 1][col]);
+    //    }
+//
+    //    for( int fila = filas - 2 ; fila>=0; fila--){
+//
+    //        for(int col = 0; col < columnas; col++){
+    //            assertEquals(0,tablero[filas][col]);
+    //        }
+    //    }
+//
+    //}
 }

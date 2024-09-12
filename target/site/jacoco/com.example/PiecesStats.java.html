@@ -2,55 +2,23 @@
 
 <span class="fc" id="L3">public class PiecesStats extends Tetris {</span>
 
-    private int filas;
-    private int columnas;
     public int piezas [][];
 
     public int[][] getForma(){
-<span class="fc" id="L10">        return piezas;</span>
+<span class="fc" id="L8">        return piezas;</span>
     }
 
     public boolean RotarPiezaIzq(){
-<span class="fc" id="L14">        piezas = rotarIzquierda(piezas);</span>
-<span class="fc" id="L15">        return true;</span>
+<span class="fc" id="L12">        piezas = rotarIzquierda(piezas);</span>
+<span class="fc" id="L13">        return true;</span>
     }
     public boolean RotarPiezaDer(){
-<span class="fc" id="L18">        piezas = rotarDerecha(piezas);</span>
-<span class="fc" id="L19">        return true;</span>
+<span class="fc" id="L16">        piezas = rotarDerecha(piezas);</span>
+<span class="fc" id="L17">        return true;</span>
     }
 
-    public int[][] rotarDerecha (int[][] pieza ){
-<span class="fc" id="L23">        filas = pieza.length;</span>
-<span class="fc" id="L24">        columnas = pieza[0].length;</span>
-
-<span class="fc" id="L26">        int[][] rotada = new int[columnas][filas];</span>
-        
-<span class="fc bfc" id="L28" title="All 2 branches covered.">        for (int i = 0; i &lt; columnas; i++) {</span>
-<span class="fc bfc" id="L29" title="All 2 branches covered.">            for (int j = 0; j &lt; filas; j++) {</span>
-<span class="fc" id="L30">                rotada[i][j] = pieza[filas - 1 - j][i];</span>
-            }
-        }
-<span class="fc" id="L33">        return rotada;</span>
-
-
-    }
-
-    public int[][] rotarIzquierda (int[][] pieza ){
-<span class="fc" id="L39">        int filas = pieza.length;</span>
-<span class="fc" id="L40">        int columnas = pieza[0].length;</span>
-
-<span class="fc" id="L42">        int[][] rotada = new int[columnas][filas];</span>
-        
-<span class="fc bfc" id="L44" title="All 2 branches covered.">        for (int i = 0; i &lt; columnas; i++) {</span>
-<span class="fc bfc" id="L45" title="All 2 branches covered.">            for (int j = 0; j &lt; filas; j++) {</span>
-<span class="fc" id="L46">                rotada[i][j] = pieza[j][columnas - 1 - i];</span>
-            }
-        }
-<span class="fc" id="L49">        return rotada;</span>
-
-
-    }
     
+
     
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

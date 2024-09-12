@@ -2,7 +2,7 @@ package com.example;
 
 public class Tetris {
 
-
+    
     private int filas;
     private int columnas;
     

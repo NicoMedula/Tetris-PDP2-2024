@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.TetrisTest" time="0.086" tests="20" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.TetrisTest" time="0.07" tests="27" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="C:\Users\nicol\OneDrive\Escritorio\jdk-17_windows-x64_bin\jdk-17.0.12\bin"/>
-    <property name="sun.java.command" value="C:\Users\nicol\AppData\Local\Temp\surefire404103268351987035\surefirebooter7588515021123476633.jar C:\Users\nicol\AppData\Local\Temp\surefire404103268351987035 2024-09-05T11-30-53_818-jvmRun1 surefire12071934858856241448tmp surefire_0896283713897146151tmp"/>
+    <property name="sun.java.command" value="C:\Users\nicol\AppData\Local\Temp\surefire9433210653423741577\surefirebooter11323647180147022135.jar C:\Users\nicol\AppData\Local\Temp\surefire9433210653423741577 2024-09-11T21-29-45_361-jvmRun1 surefire8167516061594152412tmp surefire_014498273213534329272tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\nicol\OneDrive\Escritorio\TP1-Tetris-Paradigmas2\demo\target\test-classes;C:\Users\nicol\OneDrive\Escritorio\TP1-Tetris-Paradigmas2\demo\target\classes;C:\Users\nicol\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\nicol\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\nicol\AppData\Local\Temp\surefire404103268351987035\surefirebooter7588515021123476633.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\nicol\AppData\Local\Temp\surefire9433210653423741577\surefirebooter11323647180147022135.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.12+8-LTS-286"/>
@@ -49,31 +49,38 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Users\nicol\OneDrive\Escritorio\jdk-17_windows-x64_bin\jdk-17.0.12\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Python312\Scripts\;C:\Program Files\Python312\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\dotnet\;C:\msys64\mingw64\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;%MAVEN_HOME%\bin;C:\Users\nicol\OneDrive\Escritorio\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\nicol\OneDrive\Escritorio\apache-maven-3.9.9-bin\apache-maven-3.9.9;%JAVA_HOME%\bin;C:\Users\nicol\OneDrive\Escritorio\jdk-17_windows-x64_bin\jdk-17.0.12\bin;C:\Users\nicol\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\nicol\AppData\Local\Programs\Python\Python311\;C:\Users\nicol\AppData\Local\Microsoft\WindowsApps;C:\MinGW\bin;C:\Users\nicol\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Python312;C:\Users\nicol\AppData\Roaming\npm;C:\Users\nicol\AppData\Local\GitHubDesktop\bin;C:\Users\nicol\OneDrive\Escritorio\apache-maven-3.9.9-bin.zip\apache-maven-3.9.9\bin;;."/>
+    <property name="java.library.path" value="C:\Users\nicol\OneDrive\Escritorio\jdk-17_windows-x64_bin\jdk-17.0.12\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Python312\Scripts\;C:\Program Files\Python312\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\dotnet\;C:\msys64\mingw64\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Users\nicol\OneDrive\Escritorio\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\nicol\OneDrive\Escritorio\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\nicol\OneDrive\Escritorio\apache-maven-3.9.9-bin\apache-maven-3.9.9;C:\Users\nicol\OneDrive\Escritorio\jdk-17_windows-x64_bin\jdk-17.0.12\bin;C:\Users\nicol\OneDrive\Escritorio\jdk-17_windows-x64_bin\jdk-17.0.12\bin;C:\Users\nicol\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\nicol\AppData\Local\Programs\Python\Python311\;C:\Users\nicol\AppData\Local\Microsoft\WindowsApps;C:\MinGW\bin;C:\Users\nicol\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Python312;C:\Users\nicol\AppData\Roaming\npm;C:\Users\nicol\AppData\Local\GitHubDesktop\bin;C:\Users\nicol\OneDrive\Escritorio\apache-maven-3.9.9-bin.zip\apache-maven-3.9.9\bin;;C:\Users\nicol\AppData\Roaming\Programs\Zero Install;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="java.vm.version" value="17.0.12+8-LTS-286"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="rotar_pieza_T_a_la_izquierda_Test" classname="com.example.TetrisTest" time="0.01"/>
-  <testcase name="rotar_pieza_dog_left_a_la_izquierda_y_a_la_derecha_Test" classname="com.example.TetrisTest" time="0"/>
+  <testcase name="rotar_pieza_T_a_la_izquierda_Test" classname="com.example.TetrisTest" time="0.006"/>
+  <testcase name="rotar_pieza_dog_left_a_la_izquierda_y_a_la_derecha_Test" classname="com.example.TetrisTest" time="0.001"/>
   <testcase name="inicializar_tablero_en_0_Test" classname="com.example.TetrisTest" time="0.003"/>
-  <testcase name="rotar_pieza_Stick_a_la_izquierda_y_a_la_derecha_Test" classname="com.example.TetrisTest" time="0.002"/>
-  <testcase name="rotar_pieza_ele_left_a_la_izquierda_4_rotaciones_Test" classname="com.example.TetrisTest" time="0.002"/>
-  <testcase name="crear_pieza_dog_derecha_e_izquierda_Test" classname="com.example.TetrisTest" time="0.001"/>
+  <testcase name="mover_pieza_actual_1_columna_a_la_derecha_Test" classname="com.example.TetrisTest" time="0.001"/>
+  <testcase name="rotar_pieza_Stick_a_la_izquierda_y_a_la_derecha_Test" classname="com.example.TetrisTest" time="0"/>
+  <testcase name="rotar_pieza_ele_left_a_la_izquierda_4_rotaciones_Test" classname="com.example.TetrisTest" time="0.001"/>
+  <testcase name="la_pieza_actual_baja_luego_de_dos_tic_Test" classname="com.example.TetrisTest" time="0"/>
+  <testcase name="crear_pieza_dog_derecha_e_izquierda_Test" classname="com.example.TetrisTest" time="0.002"/>
   <testcase name="rotar_pieza_ele_right_a_la_derecha_Test" classname="com.example.TetrisTest" time="0"/>
-  <testcase name="rotar_pieza_ele_right_a_la_izquierda_4_rotaciones_Test" classname="com.example.TetrisTest" time="0.001"/>
+  <testcase name="metodo_tablero_devolver_get_Test" classname="com.example.TetrisTest" time="0"/>
+  <testcase name="mover_pieza_actual_1_columna_a_la_izquierda_Test" classname="com.example.TetrisTest" time="0"/>
+  <testcase name="rotar_pieza_ele_right_a_la_izquierda_4_rotaciones_Test" classname="com.example.TetrisTest" time="0"/>
+  <testcase name="el_juego_finaliza_si_no_se_puede_agregar_mas_piezas_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="validar_la_clase_tetris_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="crear_tablero_10_x_20_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="crear_pieza_Stick_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="crear_pieza_ele_derecha_e_izquierda_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="crear_pieza_T_Test" classname="com.example.TetrisTest" time="0"/>
-  <testcase name="rotar_pieza_T_a_la_derecha_Test" classname="com.example.TetrisTest" time="0.001"/>
+  <testcase name="rotar_pieza_T_a_la_derecha_Test" classname="com.example.TetrisTest" time="0"/>
+  <testcase name="reloj_actualiza_los_tics_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="agregar_pieza_random_al_tablero_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="rotar_pieza_ele_left_a_la_derecha_4_rotaciones_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="rotar_pieza_dog_right_a_la_izquierda_y_a_la_derecha_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="se_puede_agregar_pieza_metodo_Test" classname="com.example.TetrisTest" time="0"/>
-  <testcase name="crear_pieza_Square_Test" classname="com.example.TetrisTest" time="0.002"/>
+  <testcase name="se_puede_agregar_pieza_especifica_en_el_tablero_Test" classname="com.example.TetrisTest" time="0"/>
+  <testcase name="crear_pieza_Square_Test" classname="com.example.TetrisTest" time="0.001"/>
   <testcase name="la_pieza_puede_bajar_Test" classname="com.example.TetrisTest" time="0"/>
 </testsuite>
