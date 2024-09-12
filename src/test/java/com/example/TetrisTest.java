@@ -1,5 +1,6 @@
 package com.example;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -596,7 +597,7 @@ public class TetrisTest {
     // ------------------------------------------------------------------------------------------------//
     //--------------- TEST DEL TABLERO ----------------------------------------------------------------//
     // ------------------------------------------------------------------------------------------------//
-
+    @SuppressWarnings("deprecation")
     @Test
     public  void metodo_tablero_devolver_get_Test(){
 
@@ -635,42 +636,51 @@ public class TetrisTest {
                 assertEquals(0, tablero[i][j]);
             }
         }
-
-
     }
+
+    @Test
+    public void la_pieza_baja_Test() {
+
+        Board b1 = new Board();
+        b1.setBoard();
+
+        
+        for (int i = 0; i < 10; i++) {
+            b1.bajarPieza();
+        }
+
+        assertNotNull(b1.getBoard());
+}
 
     @Test
     public  void se_puede_agregar_pieza_metodo_Test(){
         
         Board b1 = new Board();
         b1.setBoard();
-
-        PieceT p1 = new PieceT();
-
-        assertTrue(b1.PosicionarPiezaTablero(p1));
+    
+        //  pieza aleatoria correctamente
+        assertTrue(b1.agregarPiezaRandom());
 
     }
 
-    //@Test
-    //public  void se_detiene_pieza_metodo_Test(){
-//
-    //    Board b1 = new Board();
-    //    b1.setBoard();
-    //    
-    //    PieceSquare pieza = new PieceSquare();
-//
-    //    b1.agregarPiezaEspecifica(pieza);
-//
-    //    for(int i=0; i<10; i++){
-    //        
-    //        b1.bajarPieza();
-    //    }
-//
-    //    assertTrue(b1.detenerPieza(0, 0, pieza));
+    @Test
+    public  void se_detiene_pieza_metodo_Test(){
 
+        Board b1 = new Board();
+        b1.setBoard();
 
+        PieceSquare p1 = new PieceSquare();
 
-    //}
+        b1.agregarPiezaRandom();
+
+        for(int i=0; i<10; i++){
+            
+            b1.bajarPieza();
+        }
+
+        assertTrue(b1.detenerPieza(0, 0,p1 ));
+    }
+
 
     @Test
     public  void se_puede_agregar_pieza_especifica_en_el_tablero_Test(){
@@ -711,7 +721,6 @@ public class TetrisTest {
         
         Board b1 = new Board();
         b1.setBoard();
-        PieceStick p1 = new PieceStick();
 
         b1.agregarPiezaRandom();    
         int [][] tablero = b1.getBoard();
@@ -839,6 +848,21 @@ public class TetrisTest {
         r1.setTic();
 
         assertEquals(2, r1.getTic());
+    }
+
+    @Test
+    public void el_reloj_no_actualiza_los_tics_Test(){
+
+        Board board = new Board();
+        Reloj r1 = new Reloj(board);
+
+        r1.setTic();
+        r1.setTic();
+        r1.setTic();
+
+        assertFalse(r1.ticReloj());
+
+
     }
 
     @Test

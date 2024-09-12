@@ -161,10 +161,7 @@ public class Board{
             BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna); 
             posicionFila++;
             ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);
-        } else {
-            piezaActual = null;
-            posicionFila = 0;
-        }
+        } 
     }
     
 
