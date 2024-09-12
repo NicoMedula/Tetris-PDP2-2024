@@ -117,9 +117,6 @@ public class Board{
 
     public boolean sePuedeColocarPieza(int [][]forma,int fila, int columna) {
         
-        if (fila + forma.length > board.length || columna + forma[0].length > board[0].length) {
-            return false;
-        } // se agrego esto para que siempre entre en los limites del tablero
             
         for(int i = 0; i < forma.length; i++) {
             for(int j = 0; j < forma[i].length; j++) {

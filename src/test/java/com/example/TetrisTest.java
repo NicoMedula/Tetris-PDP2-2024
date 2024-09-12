@@ -652,23 +652,6 @@ public class TetrisTest {
         assertNotNull(b1.getBoard());
 }
 
-    @Test
-    public void se_puede_agregar_pieza_metodo_Test(){
-        
-        Board b1 = new Board();
-        b1.setBoard();
-
-        boolean agregar = b1.agregarPiezaRandom();
-    
-        //  pieza aleatoria correctamente
-        if (agregar) {
-            assertTrue(agregar);
-        }else{
-            assertFalse(agregar);
-        }
-        
-        
-    }
 
     @Test
     public void se_detiene_pieza_metodo_true_Test(){
@@ -872,58 +855,6 @@ public void agregar_pieza_random_al_tablero_Test() {
         assertFalse(b1.agregarPiezaRandom());//No se puede agregar pieza entonces devuelve falso
         
     }
-
-    // ------------------------------------------------------------------------------------------------//
-    //--------------- TEST DEL Reloj----------------------------------------------------------------//
-    // ------------------------------------------------------------------------------------------------//
-
-    
-    @Test
-    public void reloj_actualiza_los_tics_Test(){
-
-        Board board = new Board();
-
-        Reloj r1 = new Reloj(board);
-
-        r1.setTic();
-        r1.setTic();
-
-        assertEquals(2, r1.getTic());
-    }
-
-    @Test
-    public void el_reloj_no_actualiza_los_tics_Test(){
-
-        Board board = new Board();
-        Reloj r1 = new Reloj(board);
-
-        r1.setTic();
-        r1.setTic();
-        r1.setTic();
-
-        assertFalse(r1.ticReloj());
-
-
-    }
-
-    @Test
-    public void la_pieza_actual_baja_luego_de_dos_tic_Test(){
-
-        Board b1 = new Board();
-        PieceT t1 = new PieceT();
-        b1.setBoard();
-        b1.agregarPiezaEspecifica(t1);
-
-        
-        Reloj r1 = new Reloj(b1);
-        r1.setTic();
-        r1.setTic();
-
-
-        assertTrue(r1.ticReloj());
-    }
-
-
     @Test
     public void testEliminarLineaCompleta() {
 
@@ -983,4 +914,57 @@ public void agregar_pieza_random_al_tablero_Test() {
         b1.incrementarLineasEliminadas(2);
         assertTrue(b1.verificarFinDelJuego());  // termina
     }
+
+    // ------------------------------------------------------------------------------------------------//
+    //--------------- TEST DEL Reloj----------------------------------------------------------------//
+    // ------------------------------------------------------------------------------------------------//
+
+    
+    @Test
+    public void reloj_actualiza_los_tics_Test(){
+
+        Board board = new Board();
+
+        Reloj r1 = new Reloj(board);
+
+        r1.setTic();
+        r1.setTic();
+
+        assertEquals(2, r1.getTic());
+    }
+
+    @Test
+    public void el_reloj_no_actualiza_los_tics_Test(){
+
+        Board board = new Board();
+        Reloj r1 = new Reloj(board);
+
+        r1.setTic();
+        r1.setTic();
+        r1.setTic();
+
+        assertFalse(r1.ticReloj());
+
+
+    }
+
+    @Test
+    public void la_pieza_actual_baja_luego_de_dos_tic_Test(){
+
+        Board b1 = new Board();
+        PieceT t1 = new PieceT();
+        b1.setBoard();
+        b1.agregarPiezaEspecifica(t1);
+
+        
+        Reloj r1 = new Reloj(b1);
+        r1.setTic();
+        r1.setTic();
+
+
+        assertTrue(r1.ticReloj());
+    }
+
+
+    
 }
