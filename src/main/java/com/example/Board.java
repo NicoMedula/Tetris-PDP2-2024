@@ -95,7 +95,7 @@ public class Board{
     public boolean PosicionarPiezaTablero(IPiece pieza) {
 
         if (piezaActual==null || piezaActual.getForma()==null)  {
-            agregarPiezaRandom();
+            return false;
         }
         
         // Obtener forma de la pieza

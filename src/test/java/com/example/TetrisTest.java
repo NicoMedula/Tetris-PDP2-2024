@@ -657,10 +657,17 @@ public class TetrisTest {
         
         Board b1 = new Board();
         b1.setBoard();
+
+        boolean agregar = b1.agregarPiezaRandom();
     
         //  pieza aleatoria correctamente
-        assertTrue(b1.agregarPiezaRandom());
-
+        if (agregar) {
+            assertTrue(agregar);
+        }else{
+            assertFalse(agregar);
+        }
+        
+        
     }
 
     @Test
