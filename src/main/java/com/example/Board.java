@@ -18,6 +18,8 @@ public class Board{
     private int posicionFila =0;
     private int posicionColumna;
     private boolean JuegoTerminado=false;
+    private int lineasEliminadas = 0;
+    private int lineasParaFinalizar = 5;
 
     public boolean getTerminoelJuego(){
         return JuegoTerminado;
@@ -42,10 +44,7 @@ public class Board{
     
     piezaActual = pieza;
     piezaActual.getPieza();
-    
-    if (piezaActual.getForma() == null) {
-        return false; // Si no hay forma, no puede agregarse la pieza
-    }
+
     
     if (PosicionarPiezaTablero(pieza)) {
         return true; // Si se posiciona correctamente, retorna true
@@ -80,23 +79,16 @@ public class Board{
         piezaActual=pieza;
         piezaActual.getPieza();
         
+      // Intenta posicionar la pieza en el tablero
         if (PosicionarPiezaTablero(pieza)) {
             return true;
-        }else{
-            JuegoTerminado=true;
-            return false;
+        } else {
+            JuegoTerminado = true;
+        return false;
         }
-        
-        
-        
-
     }
 
     public boolean PosicionarPiezaTablero(IPiece pieza) {
-
-        if (piezaActual==null || piezaActual.getForma()==null)  {
-            return false;
-        }
         
         // Obtener forma de la pieza
         pieza.getPieza();
@@ -144,23 +136,26 @@ public class Board{
 
     public void bajarPieza() {
         
-        if (piezaActual == null) {
-            agregarPiezaRandom(); // Si no hay una pieza actual, agrega una pieza aleatoria.
-            piezaActual.getPieza(); 
-            if (piezaActual == null || piezaActual.getForma() == null) {
-                // Si después de intentar agregar una pieza, sigue siendo nula o su forma es nula, salimos.
+        if (piezaActual == null || piezaActual.getForma() == null) {
+            if (!agregarPiezaRandom()) {
+                
                 return;
             }
-            posicionColumna = random.nextInt(board[0].length - piezaActual.getForma()[0].length); 
         }
     
-        piezaActual.getPieza(); 
+        
+        int[][] formaPieza = piezaActual.getForma();
+        if (formaPieza == null) {
+            return; // no se puede bajar
+        }
     
-        if (sePuedeColocarPieza(piezaActual.getForma(), posicionFila + 1, posicionColumna)) {
-            BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna); 
+        
+        if (sePuedeColocarPieza(formaPieza, posicionFila + 1, posicionColumna)) {
+            BorrarPiezaActual(formaPieza, posicionFila, posicionColumna);
             posicionFila++;
-            ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);
+            ColocarPieza(formaPieza, posicionFila, posicionColumna);
         } 
+
     }
     
 
@@ -187,9 +182,6 @@ public class Board{
         }
     }
     public boolean moverPiezaaLaIzquierda() {
-        if (piezaActual == null || piezaActual.getForma() == null) {
-            return false; 
-        }
 
         if (posicionColumna > 0 && sePuedeColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna - 1)) {
             BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna);
@@ -249,6 +241,55 @@ public class Board{
         } else {
             return false; // Si no se puede colocar
         }
+    }
+
+    public void eliminarLineasCompletas() {
+        int filasEliminadas = 0;
+    
+        for (int i = 0; i < board.length; i++) {
+            boolean lineaCompleta = true;
+    
+            for (int j = 0; j < board[i].length; j++) {
+                if (board[i][j] == 0) {
+                    lineaCompleta = false;
+                    break;
+                }
+            }
+    
+            if (lineaCompleta) {
+                filasEliminadas++;
+                bajarLineas(i);
+            }
+        }
+    
+    }
+
+    private void bajarLineas(int fila) {
+        for (int i = fila; i > 0; i--) {
+            for (int j = 0; j < board[i].length; j++) {
+                board[i][j] = board[i - 1][j];
+            }
+        }
+    
+        // La primera fila siempre debe quedar vacía
+        for (int j = 0; j < board[0].length; j++) {
+            board[0][j] = 0;
+        }
+    }
+
+    public boolean verificarFinDelJuego() {
+        return lineasEliminadas >= lineasParaFinalizar;
+    }
+    
+    public void incrementarLineasEliminadas(int cantidad) {
+        lineasEliminadas += cantidad;
+        if (verificarFinDelJuego()) {
+            JuegoTerminado = true;
+        }
+    }
+    
+    public void setLineasParaFinalizar(int lineas) {
+        this.lineasParaFinalizar = lineas;
     }
 
 

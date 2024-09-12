@@ -750,32 +750,34 @@ public class TetrisTest {
     }
 
     @Test
-    public  void agregar_pieza_random_al_tablero_Test(){
+public void agregar_pieza_random_al_tablero_Test() {
+    Board b1 = new Board();
+    b1.setBoard();
 
-        boolean piezaColocada = false;
-        
-        Board b1 = new Board();
-        b1.setBoard();
+    
+    boolean piezaColocada = b1.agregarPiezaRandom();
+    
+    assertTrue(piezaColocada); // Asegura que se agregó una pieza
 
-        b1.agregarPiezaRandom();    
-        int [][] tablero = b1.getBoard();
-        
+    
+    int[][] tablero = b1.getBoard();
+    boolean piezaEnTablero = false;
 
-        for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero[i].length; j++) {
-                if (tablero[i][j] != 0) {
-                    piezaColocada = true;
-                    break;
-                }
-            }
-            if (piezaColocada) {
+    for (int i = 0; i < tablero.length; i++) {
+        for (int j = 0; j < tablero[i].length; j++) {
+            if (tablero[i][j] != 0) {
+                piezaEnTablero = true;
                 break;
             }
         }
-        
-        assertTrue(piezaColocada);  
-        b1.setBoard();
+        if (piezaEnTablero) {
+            break;
+        }
     }
+
+    assertTrue(piezaEnTablero); // Asegura que la pieza está en el tablero
+}
+
 
     @Test
     public void la_pieza_puede_bajar_Test(){
@@ -841,12 +843,14 @@ public class TetrisTest {
     public void mover_pieza_actual_1_columna_a_la_derecha_Test(){
 
         Board b1 = new Board();
-        b1.setBoard();
-        PieceStick p1 = new PieceStick();
+    b1.setBoard();
+    PieceStick p1 = new PieceStick();
 
-        b1.agregarPiezaEspecifica(p1);
+    // Coloca la pieza en el centro 
+    b1.agregarPiezaAlCentro(p1);
 
-        assertTrue(b1.moverPiezaaLaDerecha());
+    // la pieza se pueda mover a la derecha
+    assertTrue(b1.moverPiezaaLaDerecha());
     }
 
     @Test
@@ -920,47 +924,63 @@ public class TetrisTest {
     }
 
 
-    //@Test
-    //public void linea_completa_desaparece_Test(){
-//
-    //    Board b1 = new Board();
-    //    b1.setBoard();
-//
-    //    int[][] tablero = b1.getBoard();
-    //    int filas= tablero.length;
-    //    int columnas = tablero[0].length;
-//
-    //    //rellenar la ultima fila
-    //    for( int col = 0; col < columnas; col++){ 
-    //        tablero[filas -1][col] = 1; //llenamos la ultima fila con piezas
-    //    }
-//
-    //    //para verificar la fila llena
-    //    boolean filaCompleta = true;
-    //    
-    //    for(int col = 0; col < columnas ; col++){
-//
-    //        if(tablero[filas-1][col]==0){
-    //            filaCompleta = false;
-    //            break;
-    //        }
-    //    }
-//
-    //    assertTrue(filaCompleta);
-//
-    //    //metodo para verificar las lineas completas
-    //    b1.verificarYEliminarLineasCompletas();
-//
-    //    for(int col = 0; col < columnas; col++){
-    //        assertEquals(0,tablero[filas - 1][col]);
-    //    }
-//
-    //    for( int fila = filas - 2 ; fila>=0; fila--){
-//
-    //        for(int col = 0; col < columnas; col++){
-    //            assertEquals(0,tablero[filas][col]);
-    //        }
-    //    }
-//
-    //}
+    @Test
+    public void testEliminarLineaCompleta() {
+
+        Board b1 = new Board(); 
+        b1.setBoard();
+
+        // simular una línea completa
+        int[][] tablero = b1.getBoard();
+
+        for (int i = 0; i < tablero[0].length; i++) {
+            tablero[9][i] = 1;
+        }
+
+        b1.eliminarLineasCompletas();
+
+        //  fila vacía después de eliminar la línea.
+        for (int i = 0; i < tablero[0].length; i++) {
+            assertEquals(0, tablero[9][i]);
+        }
+    }
+
+    @Test
+    public void testBajarLineas() {
+
+        Board b1 = new Board(); 
+        b1.setBoard();
+
+
+        // llena una linea para eliminar
+        int[][] tablero = b1.getBoard();
+        for (int i = 0; i < tablero[0].length; i++) {
+            tablero[9][i] = 1; // Fila completa
+            tablero[8][i] = 1; // Otra fila completa
+        }
+
+        b1.eliminarLineasCompletas();
+
+        //  las dos filas superiores deben estar vacías.
+        for (int i = 0; i < tablero[0].length; i++) {
+            assertEquals(0, tablero[9][i]);
+            assertEquals(0, tablero[8][i]);
+        }
+    }
+
+    @Test
+    public void configurar_cantidad_lineas_para_finalizar_juego_Test() {
+
+        Board b1 = new Board(); 
+        b1.setBoard();
+
+        
+        b1.setLineasParaFinalizar(5);
+        b1.incrementarLineasEliminadas(3);
+
+        assertFalse(b1.verificarFinDelJuego()); // no termina
+
+        b1.incrementarLineasEliminadas(2);
+        assertTrue(b1.verificarFinDelJuego());  // termina
+    }
 }
