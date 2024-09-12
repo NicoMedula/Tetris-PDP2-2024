@@ -653,7 +653,7 @@ public class TetrisTest {
 }
 
     @Test
-    public  void se_puede_agregar_pieza_metodo_Test(){
+    public void se_puede_agregar_pieza_metodo_Test(){
         
         Board b1 = new Board();
         b1.setBoard();
@@ -664,7 +664,7 @@ public class TetrisTest {
     }
 
     @Test
-    public  void se_detiene_pieza_metodo_Test(){
+    public void se_detiene_pieza_metodo_Test(){
 
         Board b1 = new Board();
         b1.setBoard();
@@ -829,6 +829,8 @@ public class TetrisTest {
         b1.agregarPiezaEspecifica(p1); //como no se pueden agregar mas piezas por que la fila esta llena
 
         assertTrue(b1.getTerminoelJuego()); //devuelve verdadero si termina el juego
+
+        assertFalse(b1.agregarPiezaRandom());//No se puede agregar pieza entonces devuelve falso
         
     }
 

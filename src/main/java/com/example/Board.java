@@ -32,12 +32,9 @@ public class Board{
             }
         }
     }
-    public int[][] getBoard() {
-        if (board != null) {
+    public int[][] getBoard() { 
             return board;
-        }else{
-            return board;
-        }
+        
     }
 
 
@@ -82,10 +79,6 @@ public class Board{
 
         piezaActual=pieza;
         piezaActual.getPieza();
-
-        if (piezaActual.getForma()==null) {
-            return false;
-        }
         
         if (PosicionarPiezaTablero(pieza)) {
             return true;
@@ -145,15 +138,15 @@ public class Board{
 
     public void bajarPieza() {
         
-        if (piezaActual == null) {
-            agregarPiezaRandom(); // Si no hay una pieza actual, agrega una pieza aleatoria.
-            piezaActual.getPieza(); 
-            if (piezaActual == null || piezaActual.getForma() == null) {
-                // Si después de intentar agregar una pieza, sigue siendo nula o su forma es nula, salimos.
-                return;
-            }
-            posicionColumna = random.nextInt(board[0].length - piezaActual.getForma()[0].length); 
-        }
+        //if (piezaActual == null) {
+        //    agregarPiezaRandom(); // Si no hay una pieza actual, agrega una pieza aleatoria.
+        //    piezaActual.getPieza(); 
+        //    if (piezaActual == null || piezaActual.getForma() == null) {
+        //        // Si después de intentar agregar una pieza, sigue siendo nula o su forma es nula, salimos.
+        //        return;
+        //    }
+        //    posicionColumna = random.nextInt(board[0].length - piezaActual.getForma()[0].length); 
+        //}
     
         piezaActual.getPieza(); 
     
@@ -220,9 +213,6 @@ public class Board{
     }
 
     public boolean detenerPieza(int filas, int columnas,IPiece pieza){
-        if (piezaActual == null) {
-            return false;
-        }
 
         int[][] formaPieza = piezaActual.getForma();
         for (int i = 0; i < formaPieza.length; i++) {
@@ -243,10 +233,6 @@ public class Board{
     public boolean agregarPiezaAlCentro(IPiece pieza) {
         piezaActual = pieza; 
         piezaActual.getPieza(); 
-    
-        if (piezaActual.getForma() == null) {
-            return false; 
-        }
     
         int[][] forma = piezaActual.getForma();
         
