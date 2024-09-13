@@ -597,6 +597,7 @@ public class TetrisTest {
     // ------------------------------------------------------------------------------------------------//
     //--------------- TEST DEL TABLERO ----------------------------------------------------------------//
     // ------------------------------------------------------------------------------------------------//
+
     @SuppressWarnings("deprecation")
     @Test
     public  void metodo_tablero_devolver_get_Test(){
@@ -651,12 +652,28 @@ public class TetrisTest {
 
         for(int i=0; i<10; i++){
 
-            
             b1.bajarPieza();
         }
 
         assertTrue(b1.detenerPieza(0, 0,p1 ));
     }
+
+    @Test
+    public void detener_pieza_false_Test() {
+    Board b1 = new Board();
+
+    b1.setBoard();
+
+    IPiece pieza = new PieceT(); 
+    b1.posicionFila=4;
+    b1.posicionColumna=4;
+
+    b1.agregarPiezaRandom();
+
+    
+    assertFalse(b1.detenerPieza(b1.posicionFila, b1.posicionColumna, pieza));
+
+}
 
     @Test
     public void se_detiene_pieza_metodo_false_Test(){
@@ -780,8 +797,8 @@ public class TetrisTest {
     }
 
     @Test
-    public void mover_pieza_actual_1_columna_a_la_izquierda_Test(){
-        
+    public void mover_pieza_actual_1_columna_a_la_izquierda_true_Test(){
+
         PieceStick p1 = new PieceStick();
         Board b1 = new Board();
         b1.setBoard();
@@ -796,6 +813,17 @@ public class TetrisTest {
     }
 
     @Test
+public void mover_pieza_una_columna_a_la_izquierda_false_Test() {
+    Board board = new Board();
+    board.setBoard();
+
+    // Simula que la pieza está en la columna 0
+    board.posicionColumna = 0;
+    
+    assertFalse(board.moverPiezaaLaIzquierda());
+}
+
+    @Test
     public void mover_pieza_actual_1_columna_a_la_derecha_Test(){
 
         Board b1 = new Board();
@@ -808,6 +836,7 @@ public class TetrisTest {
     // la pieza se pueda mover a la derecha
     assertTrue(b1.moverPiezaaLaDerecha());
     }
+
 
     @Test
     public void el_juego_finaliza_si_no_se_puede_agregar_mas_piezas_Test(){
@@ -829,7 +858,7 @@ public class TetrisTest {
         
     }
     @Test
-    public void testEliminarLineaCompleta() {
+    public void eliminar_linea_completa_Test() {
 
         Board b1 = new Board(); 
         b1.setBoard();
@@ -850,7 +879,7 @@ public class TetrisTest {
     }
 
     @Test
-    public void testBajarLineas() {
+    public void bajar_linea_Test() {
 
         Board b1 = new Board(); 
         b1.setBoard();
@@ -887,6 +916,9 @@ public class TetrisTest {
         b1.incrementarLineasEliminadas(2);
         assertTrue(b1.verificarFinDelJuego());  // termina
     }
+
+
+    
 
     // ------------------------------------------------------------------------------------------------//
     //--------------- TEST DEL Reloj----------------------------------------------------------------//

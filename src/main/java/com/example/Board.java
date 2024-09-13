@@ -15,8 +15,8 @@ public class Board{
     private int board[][];
     private IPiece piezaActual;
     private Random random = new Random();
-    private int posicionFila =0;
-    private int posicionColumna;
+    public int posicionFila =0;
+    public int posicionColumna;
     private boolean JuegoTerminado=false;
     private int lineasEliminadas = 0;
     private int lineasParaFinalizar = 5;
@@ -288,6 +288,9 @@ public class Board{
     public void setLineasParaFinalizar(int lineas) {
         this.lineasParaFinalizar = lineas;
     }
+
+   
+    
 
 
 }

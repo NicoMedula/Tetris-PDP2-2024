@@ -15,8 +15,8 @@ import com.example.Pieces.PieceT;
     private int board[][];
     private IPiece piezaActual;
 <span class="fc" id="L17">    private Random random = new Random();</span>
-<span class="fc" id="L18">    private int posicionFila =0;</span>
-    private int posicionColumna;
+<span class="fc" id="L18">    public int posicionFila =0;</span>
+    public int posicionColumna;
 <span class="fc" id="L20">    private boolean JuegoTerminado=false;</span>
 <span class="fc" id="L21">    private int lineasEliminadas = 0;</span>
 <span class="fc" id="L22">    private int lineasParaFinalizar = 5;</span>
@@ -63,17 +63,17 @@ import com.example.Pieces.PieceT;
 <span class="pc bpc" id="L63" title="5 of 8 branches missed.">        switch(randomPieza){</span>
 <span class="nc" id="L64">            case 0: pieza = new PieceSquare(); break;</span>
 
-<span class="fc" id="L66">            case 1: pieza = new PieceT(); break;</span>
+<span class="nc" id="L66">            case 1: pieza = new PieceT(); break;</span>
 
-<span class="nc" id="L68">            case 2: pieza = new PieceStick(); break;</span>
+<span class="fc" id="L68">            case 2: pieza = new PieceStick(); break;</span>
 
 <span class="nc" id="L70">            case 3: pieza = new PieceEleLeft(); break;</span>
 
-<span class="nc" id="L72">            case 4: pieza = new PieceEleRight(); break;</span>
+<span class="fc" id="L72">            case 4: pieza = new PieceEleRight(); break;</span>
 
 <span class="fc" id="L74">            case 5: pieza = new PieceDogLeft(); break;</span>
             
-<span class="fc" id="L76">            case 6: pieza = new PieceDogRight(); break;</span>
+<span class="nc" id="L76">            case 6: pieza = new PieceDogRight(); break;</span>
         }
 
 <span class="fc" id="L79">        piezaActual=pieza;</span>
@@ -133,8 +133,8 @@ import com.example.Pieces.PieceT;
 
     public void bajarPieza() {
         
-<span class="pc bpc" id="L136" title="1 of 4 branches missed.">        if (piezaActual == null || piezaActual.getForma() == null) {</span>
-<span class="pc bpc" id="L137" title="1 of 2 branches missed.">            if (!agregarPiezaRandom()) {</span>
+<span class="pc bpc" id="L136" title="2 of 4 branches missed.">        if (piezaActual == null || piezaActual.getForma() == null) {</span>
+<span class="nc bnc" id="L137" title="All 2 branches missed.">            if (!agregarPiezaRandom()) {</span>
                 
 <span class="nc" id="L139">                return;</span>
             }
@@ -180,14 +180,14 @@ import com.example.Pieces.PieceT;
 <span class="fc" id="L180">    }</span>
     public boolean moverPiezaaLaIzquierda() {
 
-<span class="pc bpc" id="L183" title="2 of 4 branches missed.">        if (posicionColumna &gt; 0 &amp;&amp; sePuedeColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna - 1)) {</span>
+<span class="pc bpc" id="L183" title="1 of 4 branches missed.">        if (posicionColumna &gt; 0 &amp;&amp; sePuedeColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna - 1)) {</span>
 <span class="fc" id="L184">            BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna);</span>
 <span class="fc" id="L185">            posicionColumna--;</span>
 <span class="fc" id="L186">            ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);</span>
 <span class="fc" id="L187">            return true;</span>
         }
 
-<span class="nc" id="L190">        return false;</span>
+<span class="fc" id="L190">        return false;</span>
     }
 
 
@@ -288,6 +288,9 @@ import com.example.Pieces.PieceT;
     public void setLineasParaFinalizar(int lineas) {
 <span class="fc" id="L289">        this.lineasParaFinalizar = lineas;</span>
 <span class="fc" id="L290">    }</span>
+
+   
+    
 
 
 }
