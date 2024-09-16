@@ -4,6 +4,10 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+
+import org.junit.Before;
+import java.util.Random;
+
 import org.junit.Test;
 
 import com.example.Pieces.PieceDogLeft;
@@ -598,6 +602,8 @@ public class TetrisTest {
     //--------------- TEST DEL TABLERO ----------------------------------------------------------------//
     // ------------------------------------------------------------------------------------------------//
 
+    
+
     @SuppressWarnings("deprecation")
     @Test
     public  void metodo_tablero_devolver_get_Test(){
@@ -742,13 +748,29 @@ public class TetrisTest {
     
         
         assertNotNull(b1.getBoard());
-    
+        b1.setBoard();
+        assertTrue(b1.agregarPiezaRandom());
+
         
-        boolean piezaColocada = b1.agregarPiezaRandom();
-        
-        assertTrue(piezaColocada);
     }
+
+
+    @Test
+    public void agregar_pieza_random_al_tablero_false_Test(){
+
+        Board b1 = new Board();
+        b1.setBoard(); 
+
+        int[][] tableroLleno = b1.getBoard();
+        for (int i = 0; i < tableroLleno[0].length; i++) {
+        tableroLleno[0][i] = 1; // Llena la primera fila
+        }
+        
+        assertFalse(b1.agregarPiezaRandom());
     
+
+
+    }
 
 
 

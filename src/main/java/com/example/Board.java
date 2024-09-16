@@ -1,5 +1,6 @@
 package com.example;
 
+
 import java.util.Random;
 
 import com.example.Pieces.PieceDogLeft;
@@ -9,8 +10,10 @@ import com.example.Pieces.PieceEleRight;
 import com.example.Pieces.PieceSquare;
 import com.example.Pieces.PieceStick;
 import com.example.Pieces.PieceT;
+import com.example.PiecesStats;
 
 public class Board{
+
 
     private int board[][];
     private IPiece piezaActual;
@@ -20,6 +23,8 @@ public class Board{
     private boolean JuegoTerminado=false;
     private int lineasEliminadas = 0;
     private int lineasParaFinalizar = 5;
+
+    
 
     public boolean getTerminoelJuego(){
         return JuegoTerminado;
@@ -78,12 +83,10 @@ public class Board{
 
         piezaActual=pieza;
         piezaActual.getPieza();
-        
-      // Intenta posicionar la pieza en el tablero
-        if (agregarPiezaEspecifica(pieza)) {
+
+        if (agregarPiezaEspecifica(pieza) && piezaActual!=null) {
             return true;
         } else {
-            JuegoTerminado = true;
             return false;
         }
     }
@@ -136,15 +139,12 @@ public class Board{
         if (piezaActual == null || piezaActual.getForma() == null) {
             if (!agregarPiezaRandom()) {
                 
-                return;
+                agregarPiezaRandom();
             }
         }
     
         
         int[][] formaPieza = piezaActual.getForma();
-        if (formaPieza == null) {
-            return; // no se puede bajar
-        }
     
         
         if (sePuedeColocarPieza(formaPieza, posicionFila + 1, posicionColumna)) {

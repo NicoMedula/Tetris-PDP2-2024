@@ -60,7 +60,7 @@ import com.example.Pieces.PieceT;
 
 <span class="fc" id="L61">        IPiece pieza = null;</span>
 
-<span class="pc bpc" id="L63" title="5 of 8 branches missed.">        switch(randomPieza){</span>
+<span class="pc bpc" id="L63" title="6 of 8 branches missed.">        switch(randomPieza){</span>
 <span class="nc" id="L64">            case 0: pieza = new PieceSquare(); break;</span>
 
 <span class="nc" id="L66">            case 1: pieza = new PieceT(); break;</span>
@@ -71,7 +71,7 @@ import com.example.Pieces.PieceT;
 
 <span class="fc" id="L72">            case 4: pieza = new PieceEleRight(); break;</span>
 
-<span class="fc" id="L74">            case 5: pieza = new PieceDogLeft(); break;</span>
+<span class="nc" id="L74">            case 5: pieza = new PieceDogLeft(); break;</span>
             
 <span class="nc" id="L76">            case 6: pieza = new PieceDogRight(); break;</span>
         }
@@ -80,7 +80,7 @@ import com.example.Pieces.PieceT;
 <span class="fc" id="L80">        piezaActual.getPieza();</span>
         
       // Intenta posicionar la pieza en el tablero
-<span class="pc bpc" id="L83" title="1 of 2 branches missed.">        if (PosicionarPiezaTablero(piezaActual)) {</span>
+<span class="pc bpc" id="L83" title="1 of 2 branches missed.">        if (agregarPiezaEspecifica(pieza)) {</span>
 <span class="fc" id="L84">            return true;</span>
         } else {
 <span class="nc" id="L86">            JuegoTerminado = true;</span>

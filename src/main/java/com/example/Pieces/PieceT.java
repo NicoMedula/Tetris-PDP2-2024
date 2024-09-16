@@ -26,4 +26,6 @@ public class PieceT extends PiecesStats
         return true;
         
     }
+
+    
 }
