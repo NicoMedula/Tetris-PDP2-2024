@@ -16,7 +16,7 @@ public class Board{
 
 
     private int board[][];
-    private IPiece piezaActual;
+    public IPiece piezaActual;
     private Random random = new Random();
     public int posicionFila =0;
     public int posicionColumna;
@@ -24,6 +24,9 @@ public class Board{
     private int lineasEliminadas = 0;
     private int lineasParaFinalizar = 5;
 
+    public int getBoardWidth() {
+        return board[0].length; // Retorna el número de columnas del tablero
+    }
     
 
     public boolean getTerminoelJuego(){

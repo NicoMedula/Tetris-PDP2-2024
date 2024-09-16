@@ -955,6 +955,20 @@ public void mover_pieza_una_columna_a_la_izquierda_false_Test() {
 
 
     @Test
+    public void mover_pieza_una_columna_a_la_derecha_false_Test() {
+        Board board = new Board();
+        board.setBoard();
+
+        board.agregarPiezaRandom();
+    
+        board.posicionColumna = board.getBoardWidth() - board.piezaActual.getForma()[0].length;
+        
+        assertFalse(board.moverPiezaaLaDerecha());
+    }
+
+
+
+    @Test
     public void el_juego_finaliza_si_no_se_puede_agregar_mas_piezas_Test(){
 
         Board b1 = new Board();
