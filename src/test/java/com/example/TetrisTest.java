@@ -679,7 +679,27 @@ public class TetrisTest {
     
     assertFalse(b1.detenerPieza(b1.posicionFila, b1.posicionColumna, pieza));
 
-}
+    }
+
+
+    @Test
+    public void se_puede_agregar_pieza_en_el_centro_False_Test(){
+        Board b1 = new Board();
+        b1.setBoard();
+
+    // Vamos a bloquear el centro del tablero.
+    // Supongamos que `colocarPiezaManual` es un método que permite añadir una pieza en una ubicación arbitraria.
+    // Aquí ponemos algo en la fila 0, ocupando las columnas centrales.
+    int[][] piezaBloqueo = { { 1, 1, 1 } };
+    b1.ColocarPieza(piezaBloqueo, 0, (20 / 2) - 1);
+    
+
+    IPiece piezaNueva = new PieceStick(); 
+    boolean resultado = b1.agregarPiezaAlCentro(piezaNueva);
+
+    
+    assertFalse(resultado);
+    }
 
     @Test
     public void se_detiene_pieza_metodo_false_Test(){

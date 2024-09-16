@@ -10,7 +10,7 @@ import com.example.Pieces.PieceEleRight;
 import com.example.Pieces.PieceSquare;
 import com.example.Pieces.PieceStick;
 import com.example.Pieces.PieceT;
-import com.example.PiecesStats;
+
 
 public class Board{
 
@@ -157,7 +157,7 @@ public class Board{
     
 
 
-    private void ColocarPieza(int[][] forma, int fila, int columna) {
+    public void ColocarPieza(int[][] forma, int fila, int columna) {
         for (int i = 0; i < forma.length; i++) {
             for (int j = 0; j < forma[i].length; j++) {
                 if (forma[i][j] != 0) {
@@ -288,10 +288,6 @@ public class Board{
     public void setLineasParaFinalizar(int lineas) {
         this.lineasParaFinalizar = lineas;
     }
-
-   
-    
-
 
 }
 
