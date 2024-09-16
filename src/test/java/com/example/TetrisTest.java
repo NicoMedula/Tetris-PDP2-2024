@@ -727,6 +727,7 @@ public class TetrisTest {
         b1.setBoard();
 
         PieceSquare p1 = new PieceSquare();
+        
 
         b1.agregarPiezaRandom();
 
@@ -742,16 +743,17 @@ public class TetrisTest {
     public void detener_pieza_false_Test() {
     Board b1 = new Board();
 
+    PieceSquare p1 = new PieceSquare();
+
     b1.setBoard();
 
-    IPiece pieza = new PieceT(); 
     b1.posicionFila=4;
     b1.posicionColumna=4;
 
     b1.agregarPiezaRandom();
 
     
-    assertFalse(b1.detenerPieza(b1.posicionFila, b1.posicionColumna, pieza));
+    assertFalse(b1.detenerPieza(b1.posicionFila, b1.posicionColumna, p1));
 
     }
 
@@ -839,7 +841,6 @@ public class TetrisTest {
     
         
         assertNotNull(b1.getBoard());
-        b1.setBoard();
         assertTrue(b1.agregarPiezaRandom());
 
         

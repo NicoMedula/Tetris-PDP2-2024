@@ -112,6 +112,10 @@ public class Board{
 
         piezaActual.getPieza();
 
+        if ( piezaActual.getForma() == null ) {
+            agregarPiezaRandom();
+        }
+
         if (agregarPiezaEspecifica(piezaActual) && piezaActual!=null) {
             return true;
         } else {
