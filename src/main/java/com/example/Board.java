@@ -80,7 +80,7 @@ public class Board{
         piezaActual.getPieza();
         
       // Intenta posicionar la pieza en el tablero
-        if (PosicionarPiezaTablero(piezaActual)) {
+        if (agregarPiezaEspecifica(pieza)) {
             return true;
         } else {
             JuegoTerminado = true;
