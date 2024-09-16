@@ -34,5 +34,12 @@ public class PieceEleRight extends PiecesStats
         return true;
     }
 
+    @Override
+    public void setForma(int[][] nuevaForma) {
+        this.piezas = nuevaForma; // Actualiza la forma de la pieza
+    }
+
+    
+
     
 }

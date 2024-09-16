@@ -5,9 +5,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 
-import org.junit.Before;
-import java.util.Random;
-
 import org.junit.Test;
 
 import com.example.Pieces.PieceDogLeft;

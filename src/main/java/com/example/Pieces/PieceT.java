@@ -27,5 +27,15 @@ public class PieceT extends PiecesStats
         
     }
 
+    @Override
+    public int[][] getForma() {
+        return piezas;
+    }
+
+    @Override
+    public void setForma(int[][] nuevaForma) {
+        this.piezas = nuevaForma; // Actualiza la forma de la pieza
+    }
+
     
 }

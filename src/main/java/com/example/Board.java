@@ -66,6 +66,25 @@ public class Board{
         return piezaActual;
     }
 
+    public void rotarPiezaAleatoriamente() {
+        Tetris tetris = new Tetris();
+        
+        
+        int rotacion = random.nextInt(2); // 0 para rotar a la izquierda, 1 para rotar a la derecha
+        
+        // Obtener la forma actual de la pieza
+        int[][] formaActual = piezaActual.getForma();
+        
+        // Aplicar la rotación
+        if (rotacion == 0) {
+            // Rotar a la izquierda
+            piezaActual.setForma(tetris.rotarIzquierda(formaActual));
+        } else {
+            // Rotar a la derecha
+            piezaActual.setForma(tetris.rotarDerecha(formaActual));
+        }
+    }
+
     public void agregarPiezaRandom(int numero){
         switch(numero){
             case 0: piezaActual = new PieceSquare(); break;
@@ -82,6 +101,7 @@ public class Board{
             
             case 6: piezaActual = new PieceDogRight(); break;
         }
+        
     }
 
     public boolean agregarPiezaRandom(){
