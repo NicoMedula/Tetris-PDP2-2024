@@ -10,7 +10,7 @@ import com.example.Pieces.PieceEleRight;
 import com.example.Pieces.PieceSquare;
 import com.example.Pieces.PieceStick;
 import com.example.Pieces.PieceT;
-import com.example.PiecesStats;
+
 
 <span class="fc" id="L15">public class Board{</span>
 
@@ -59,239 +59,232 @@ import com.example.PiecesStats;
     }
     }
 
+    public void adquirirPiezaRandom(){
+
+        
+<span class="nc" id="L65">    }</span>
+
     public boolean agregarPiezaRandom(){
         
-<span class="fc" id="L64">        int randomPieza = random.nextInt(7);</span>
+<span class="fc" id="L69">        int randomPieza = random.nextInt(7);</span>
 
-<span class="fc" id="L66">        IPiece pieza = null;</span>
+<span class="fc" id="L71">        IPiece pieza = null;</span>
 
-<span class="pc bpc" id="L68" title="5 of 8 branches missed.">        switch(randomPieza){</span>
-<span class="nc" id="L69">            case 0: pieza = new PieceSquare(); break;</span>
+<span class="pc bpc" id="L73" title="4 of 8 branches missed.">        switch(randomPieza){</span>
+<span class="nc" id="L74">            case 0: pieza = new PieceSquare(); break;</span>
 
-<span class="fc" id="L71">            case 1: pieza = new PieceT(); break;</span>
+<span class="nc" id="L76">            case 1: pieza = new PieceT(); break;</span>
 
-<span class="nc" id="L73">            case 2: pieza = new PieceStick(); break;</span>
+<span class="fc" id="L78">            case 2: pieza = new PieceStick(); break;</span>
 
-<span class="fc" id="L75">            case 3: pieza = new PieceEleLeft(); break;</span>
+<span class="nc" id="L80">            case 3: pieza = new PieceEleLeft(); break;</span>
 
-<span class="fc" id="L77">            case 4: pieza = new PieceEleRight(); break;</span>
+<span class="fc" id="L82">            case 4: pieza = new PieceEleRight(); break;</span>
 
-<span class="nc" id="L79">            case 5: pieza = new PieceDogLeft(); break;</span>
+<span class="fc" id="L84">            case 5: pieza = new PieceDogLeft(); break;</span>
             
-<span class="nc" id="L81">            case 6: pieza = new PieceDogRight(); break;</span>
+<span class="fc" id="L86">            case 6: pieza = new PieceDogRight(); break;</span>
         }
 
-<span class="fc" id="L84">        piezaActual=pieza;</span>
-<span class="fc" id="L85">        piezaActual.getPieza();</span>
+<span class="fc" id="L89">        piezaActual=pieza;</span>
+<span class="fc" id="L90">        piezaActual.getPieza();</span>
 
-<span class="pc bpc" id="L87" title="1 of 4 branches missed.">        if (agregarPiezaEspecifica(pieza) &amp;&amp; piezaActual!=null) {</span>
-<span class="fc" id="L88">            return true;</span>
+<span class="pc bpc" id="L92" title="1 of 4 branches missed.">        if (agregarPiezaEspecifica(pieza) &amp;&amp; piezaActual!=null) {</span>
+<span class="fc" id="L93">            return true;</span>
         } else {
-<span class="fc" id="L90">            return false;</span>
+<span class="fc" id="L95">            return false;</span>
         }
     }
 
     public boolean PosicionarPiezaTablero(IPiece pieza) {
         
         // Obtener forma de la pieza
-<span class="fc" id="L97">        pieza.getPieza();</span>
+<span class="fc" id="L102">        pieza.getPieza();</span>
         
-<span class="fc" id="L99">        int [][]forma = pieza.getForma();</span>
+<span class="fc" id="L104">        int [][]forma = pieza.getForma();</span>
         
         // Ancho disponible en el tablero para colocar la pieza
-<span class="fc" id="L102">        int maxColumnaInicio = board[0].length - forma[0].length; // la pieza completa entre en el tablero</span>
-<span class="fc" id="L103">        int columna = random.nextInt(maxColumnaInicio + 1);  // Coloca la pieza aleatoriamente en una columna válida</span>
+<span class="fc" id="L107">        int maxColumnaInicio = board[0].length - forma[0].length; // la pieza completa entre en el tablero</span>
+<span class="fc" id="L108">        int columna = random.nextInt(maxColumnaInicio + 1);  // Coloca la pieza aleatoriamente en una columna válida</span>
         
         // Verificar si la pieza puede ser colocada en la fila 0 y columna calculada
-<span class="fc bfc" id="L106" title="All 2 branches covered.">        if (sePuedeColocarPieza(forma, 0, columna)) {</span>
-<span class="fc bfc" id="L107" title="All 2 branches covered.">            for (int i = 0; i &lt; forma.length; i++) {</span>
-<span class="fc bfc" id="L108" title="All 2 branches covered.">                for (int j = 0; j &lt; forma[i].length; j++) {</span>
-<span class="fc bfc" id="L109" title="All 2 branches covered.">                    if (forma[i][j] != 0) {</span>
-<span class="fc" id="L110">                        board[i][columna + j] = forma[i][j];</span>
+<span class="fc bfc" id="L111" title="All 2 branches covered.">        if (sePuedeColocarPieza(forma, 0, columna)) {</span>
+<span class="fc bfc" id="L112" title="All 2 branches covered.">            for (int i = 0; i &lt; forma.length; i++) {</span>
+<span class="fc bfc" id="L113" title="All 2 branches covered.">                for (int j = 0; j &lt; forma[i].length; j++) {</span>
+<span class="fc bfc" id="L114" title="All 2 branches covered.">                    if (forma[i][j] != 0) {</span>
+<span class="fc" id="L115">                        board[i][columna + j] = forma[i][j];</span>
                     }
                 }
             }
-<span class="fc" id="L114">            return true;</span>
+<span class="fc" id="L119">            return true;</span>
         
         } else {
-<span class="fc" id="L117">            return false; // El juego termina si no puede colocar la pieza</span>
+<span class="fc" id="L122">            return false; // El juego termina si no puede colocar la pieza</span>
         }
     }   
 
     public boolean sePuedeColocarPieza(int [][]forma,int fila, int columna) {
         
             
-<span class="fc bfc" id="L124" title="All 2 branches covered.">        for(int i = 0; i &lt; forma.length; i++) {</span>
-<span class="fc bfc" id="L125" title="All 2 branches covered.">            for(int j = 0; j &lt; forma[i].length; j++) {</span>
-<span class="pc bpc" id="L126" title="1 of 6 branches missed.">                if (forma[i][j] != 0 &amp;&amp; (columna + j &gt;= board[0].length || board[fila + i][columna + j] != 0)) {</span>
-<span class="fc" id="L127">                    return false;</span>
+<span class="fc bfc" id="L129" title="All 2 branches covered.">        for(int i = 0; i &lt; forma.length; i++) {</span>
+<span class="fc bfc" id="L130" title="All 2 branches covered.">            for(int j = 0; j &lt; forma[i].length; j++) {</span>
+<span class="pc bpc" id="L131" title="1 of 6 branches missed.">                if (forma[i][j] != 0 &amp;&amp; (columna + j &gt;= board[0].length || board[fila + i][columna + j] != 0)) {</span>
+<span class="fc" id="L132">                    return false;</span>
                 }
             }
 
         }
-<span class="fc" id="L132">        return true;</span>
+<span class="fc" id="L137">        return true;</span>
     }
 
     
 
     public void bajarPieza() {
         
-<span class="pc bpc" id="L139" title="2 of 4 branches missed.">        if (piezaActual == null || piezaActual.getForma() == null) {</span>
-<span class="nc bnc" id="L140" title="All 2 branches missed.">            if (!agregarPiezaRandom()) {</span>
-                
-<span class="nc" id="L142">                agregarPiezaRandom();</span>
-            }
-        }
+<span class="fc" id="L144">        int[][] formaPieza = piezaActual.getForma();</span>
     
         
-<span class="fc" id="L147">        int[][] formaPieza = piezaActual.getForma();</span>
-    
-        
-<span class="fc bfc" id="L150" title="All 2 branches covered.">        if (sePuedeColocarPieza(formaPieza, posicionFila + 1, posicionColumna)) {</span>
-<span class="fc" id="L151">            BorrarPiezaActual(formaPieza, posicionFila, posicionColumna);</span>
-<span class="fc" id="L152">            posicionFila++;</span>
-<span class="fc" id="L153">            ColocarPieza(formaPieza, posicionFila, posicionColumna);</span>
+<span class="fc bfc" id="L147" title="All 2 branches covered.">        if (sePuedeColocarPieza(formaPieza, posicionFila + 1, posicionColumna)) {</span>
+<span class="fc" id="L148">            BorrarPiezaActual(formaPieza, posicionFila, posicionColumna);</span>
+<span class="fc" id="L149">            posicionFila++;</span>
+<span class="fc" id="L150">            ColocarPieza(formaPieza, posicionFila, posicionColumna);</span>
         } 
 
-<span class="fc" id="L156">    }</span>
+<span class="fc" id="L153">    }</span>
     
 
 
-    private void ColocarPieza(int[][] forma, int fila, int columna) {
-<span class="fc bfc" id="L161" title="All 2 branches covered.">        for (int i = 0; i &lt; forma.length; i++) {</span>
-<span class="fc bfc" id="L162" title="All 2 branches covered.">            for (int j = 0; j &lt; forma[i].length; j++) {</span>
-<span class="fc bfc" id="L163" title="All 2 branches covered.">                if (forma[i][j] != 0) {</span>
-<span class="fc" id="L164">                    board[fila + i][columna + j] = forma[i][j];</span>
+    public void ColocarPieza(int[][] forma, int fila, int columna) {
+<span class="fc bfc" id="L158" title="All 2 branches covered.">        for (int i = 0; i &lt; forma.length; i++) {</span>
+<span class="fc bfc" id="L159" title="All 2 branches covered.">            for (int j = 0; j &lt; forma[i].length; j++) {</span>
+<span class="fc bfc" id="L160" title="All 2 branches covered.">                if (forma[i][j] != 0) {</span>
+<span class="fc" id="L161">                    board[fila + i][columna + j] = forma[i][j];</span>
                 }
             }
         }
-<span class="fc" id="L168">    }</span>
+<span class="fc" id="L165">    }</span>
 
 
     private void BorrarPiezaActual(int[][] forma, int fila, int columna) {
-<span class="fc bfc" id="L172" title="All 2 branches covered.">        for (int i = 0; i &lt; forma.length; i++) {</span>
-<span class="fc bfc" id="L173" title="All 2 branches covered.">            for (int j = 0; j &lt; forma[i].length; j++) {</span>
-<span class="fc bfc" id="L174" title="All 2 branches covered.">                if (forma[i][j] != 0) {</span>
+<span class="fc bfc" id="L169" title="All 2 branches covered.">        for (int i = 0; i &lt; forma.length; i++) {</span>
+<span class="fc bfc" id="L170" title="All 2 branches covered.">            for (int j = 0; j &lt; forma[i].length; j++) {</span>
+<span class="fc bfc" id="L171" title="All 2 branches covered.">                if (forma[i][j] != 0) {</span>
 
-<span class="fc" id="L176">                    board[fila + i][columna + j] = 0;</span>
+<span class="fc" id="L173">                    board[fila + i][columna + j] = 0;</span>
                 }
             }
         }
-<span class="fc" id="L180">    }</span>
+<span class="fc" id="L177">    }</span>
     public boolean moverPiezaaLaIzquierda() {
 
-<span class="pc bpc" id="L183" title="1 of 4 branches missed.">        if (posicionColumna &gt; 0 &amp;&amp; sePuedeColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna - 1)) {</span>
-<span class="fc" id="L184">            BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna);</span>
-<span class="fc" id="L185">            posicionColumna--;</span>
-<span class="fc" id="L186">            ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);</span>
-<span class="fc" id="L187">            return true;</span>
+<span class="pc bpc" id="L180" title="1 of 4 branches missed.">        if (posicionColumna &gt; 0 &amp;&amp; sePuedeColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna - 1)) {</span>
+<span class="fc" id="L181">            BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna);</span>
+<span class="fc" id="L182">            posicionColumna--;</span>
+<span class="fc" id="L183">            ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);</span>
+<span class="fc" id="L184">            return true;</span>
         }
 
-<span class="fc" id="L190">        return false;</span>
+<span class="fc" id="L187">        return false;</span>
     }
 
 
     public boolean moverPiezaaLaDerecha() {
 
-<span class="pc bpc" id="L196" title="1 of 2 branches missed.">        if (posicionColumna + piezaActual.getForma()[0].length &lt; board[0].length </span>
-<span class="pc bpc" id="L197" title="1 of 2 branches missed.">            &amp;&amp; sePuedeColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna + 1)) {</span>
-<span class="fc" id="L198">            BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna);</span>
-<span class="fc" id="L199">            posicionColumna++;</span>
-<span class="fc" id="L200">            ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);</span>
-<span class="fc" id="L201">            return true;</span>
+<span class="pc bpc" id="L193" title="1 of 2 branches missed.">        if (posicionColumna + piezaActual.getForma()[0].length &lt; board[0].length </span>
+<span class="pc bpc" id="L194" title="1 of 2 branches missed.">            &amp;&amp; sePuedeColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna + 1)) {</span>
+<span class="fc" id="L195">            BorrarPiezaActual(piezaActual.getForma(), posicionFila, posicionColumna);</span>
+<span class="fc" id="L196">            posicionColumna++;</span>
+<span class="fc" id="L197">            ColocarPieza(piezaActual.getForma(), posicionFila, posicionColumna);</span>
+<span class="fc" id="L198">            return true;</span>
         }
-<span class="nc" id="L203">        return false;</span>
+<span class="nc" id="L200">        return false;</span>
     }
 
     public boolean detenerPieza(int filas, int columnas,IPiece pieza){
 
-<span class="fc" id="L208">        int[][] formaPieza = piezaActual.getForma();</span>
-<span class="fc bfc" id="L209" title="All 2 branches covered.">        for (int i = 0; i &lt; formaPieza.length; i++) {</span>
-<span class="fc bfc" id="L210" title="All 2 branches covered.">            for (int j = 0; j &lt; formaPieza[i].length; j++) {</span>
+<span class="fc" id="L205">        int[][] formaPieza = piezaActual.getForma();</span>
+<span class="fc bfc" id="L206" title="All 2 branches covered.">        for (int i = 0; i &lt; formaPieza.length; i++) {</span>
+<span class="fc bfc" id="L207" title="All 2 branches covered.">            for (int j = 0; j &lt; formaPieza[i].length; j++) {</span>
 
-<span class="fc bfc" id="L212" title="All 2 branches covered.">                if (formaPieza[i][j] != 0) {</span>
+<span class="fc bfc" id="L209" title="All 2 branches covered.">                if (formaPieza[i][j] != 0) {</span>
                     
-<span class="pc bpc" id="L214" title="1 of 4 branches missed.">                    if (posicionFila + i + 1 &gt;= board.length|| board[posicionFila + i + 1][posicionColumna + j] != 0) {</span>
-<span class="fc" id="L215">                        return true; // La pieza ya no puede descender</span>
+<span class="pc bpc" id="L211" title="1 of 4 branches missed.">                    if (posicionFila + i + 1 &gt;= board.length|| board[posicionFila + i + 1][posicionColumna + j] != 0) {</span>
+<span class="fc" id="L212">                        return true; // La pieza ya no puede descender</span>
                     }
                 }
             }
         }
-<span class="fc" id="L220">        return false; // La pieza puede descender</span>
+<span class="fc" id="L217">        return false; // La pieza puede descender</span>
     }
 
 
     public boolean agregarPiezaAlCentro(IPiece pieza) {
-<span class="fc" id="L225">        piezaActual = pieza; </span>
-<span class="fc" id="L226">        piezaActual.getPieza(); </span>
+<span class="fc" id="L222">        piezaActual = pieza; </span>
+<span class="fc" id="L223">        piezaActual.getPieza(); </span>
     
-<span class="fc" id="L228">        int[][] forma = piezaActual.getForma();</span>
+<span class="fc" id="L225">        int[][] forma = piezaActual.getForma();</span>
         
         
-<span class="fc" id="L231">        int columnaCentro = (board[0].length / 2) - (forma[0].length / 2);//columna central para la pieza</span>
+<span class="fc" id="L228">        int columnaCentro = (board[0].length / 2) - (forma[0].length / 2);//columna central para la pieza</span>
             
-<span class="pc bpc" id="L233" title="1 of 2 branches missed.">        if (sePuedeColocarPieza(forma, 0, columnaCentro)) {  // Verifica si la pieza puede ser colocada en la fila 0 y columna calculada</span>
-<span class="fc" id="L234">            posicionFila = 0; </span>
-<span class="fc" id="L235">            posicionColumna = columnaCentro; // Posiciona la columna en el centro</span>
-<span class="fc" id="L236">            ColocarPieza(forma, posicionFila, posicionColumna); // Coloca la pieza en el tablero</span>
-<span class="fc" id="L237">            return true;</span>
+<span class="fc bfc" id="L230" title="All 2 branches covered.">        if (sePuedeColocarPieza(forma, 0, columnaCentro)) {  // Verifica si la pieza puede ser colocada en la fila 0 y columna calculada</span>
+<span class="fc" id="L231">            posicionFila = 0; </span>
+<span class="fc" id="L232">            posicionColumna = columnaCentro; // Posiciona la columna en el centro</span>
+<span class="fc" id="L233">            ColocarPieza(forma, posicionFila, posicionColumna); // Coloca la pieza en el tablero</span>
+<span class="fc" id="L234">            return true;</span>
         } else {
-<span class="nc" id="L239">            return false; // Si no se puede colocar</span>
+<span class="fc" id="L236">            return false; // Si no se puede colocar</span>
         }
     }
 
     public void eliminarLineasCompletas() {
-<span class="fc" id="L244">        int filasEliminadas = 0;</span>
+<span class="fc" id="L241">        int filasEliminadas = 0;</span>
     
-<span class="fc bfc" id="L246" title="All 2 branches covered.">        for (int i = 0; i &lt; board.length; i++) {</span>
-<span class="fc" id="L247">            boolean lineaCompleta = true;</span>
+<span class="fc bfc" id="L243" title="All 2 branches covered.">        for (int i = 0; i &lt; board.length; i++) {</span>
+<span class="fc" id="L244">            boolean lineaCompleta = true;</span>
     
-<span class="fc bfc" id="L249" title="All 2 branches covered.">            for (int j = 0; j &lt; board[i].length; j++) {</span>
-<span class="fc bfc" id="L250" title="All 2 branches covered.">                if (board[i][j] == 0) {</span>
-<span class="fc" id="L251">                    lineaCompleta = false;</span>
-<span class="fc" id="L252">                    break;</span>
+<span class="fc bfc" id="L246" title="All 2 branches covered.">            for (int j = 0; j &lt; board[i].length; j++) {</span>
+<span class="fc bfc" id="L247" title="All 2 branches covered.">                if (board[i][j] == 0) {</span>
+<span class="fc" id="L248">                    lineaCompleta = false;</span>
+<span class="fc" id="L249">                    break;</span>
                 }
             }
     
-<span class="fc bfc" id="L256" title="All 2 branches covered.">            if (lineaCompleta) {</span>
-<span class="fc" id="L257">                filasEliminadas++;</span>
-<span class="fc" id="L258">                bajarLineas(i);</span>
+<span class="fc bfc" id="L253" title="All 2 branches covered.">            if (lineaCompleta) {</span>
+<span class="fc" id="L254">                filasEliminadas++;</span>
+<span class="fc" id="L255">                bajarLineas(i);</span>
             }
         }
     
-<span class="fc" id="L262">    }</span>
+<span class="fc" id="L259">    }</span>
 
     private void bajarLineas(int fila) {
-<span class="fc bfc" id="L265" title="All 2 branches covered.">        for (int i = fila; i &gt; 0; i--) {</span>
-<span class="fc bfc" id="L266" title="All 2 branches covered.">            for (int j = 0; j &lt; board[i].length; j++) {</span>
-<span class="fc" id="L267">                board[i][j] = board[i - 1][j];</span>
+<span class="fc bfc" id="L262" title="All 2 branches covered.">        for (int i = fila; i &gt; 0; i--) {</span>
+<span class="fc bfc" id="L263" title="All 2 branches covered.">            for (int j = 0; j &lt; board[i].length; j++) {</span>
+<span class="fc" id="L264">                board[i][j] = board[i - 1][j];</span>
             }
         }
     
         // La primera fila siempre debe quedar vacía
-<span class="fc bfc" id="L272" title="All 2 branches covered.">        for (int j = 0; j &lt; board[0].length; j++) {</span>
-<span class="fc" id="L273">            board[0][j] = 0;</span>
+<span class="fc bfc" id="L269" title="All 2 branches covered.">        for (int j = 0; j &lt; board[0].length; j++) {</span>
+<span class="fc" id="L270">            board[0][j] = 0;</span>
         }
-<span class="fc" id="L275">    }</span>
+<span class="fc" id="L272">    }</span>
 
     public boolean verificarFinDelJuego() {
-<span class="fc bfc" id="L278" title="All 2 branches covered.">        return lineasEliminadas &gt;= lineasParaFinalizar;</span>
+<span class="fc bfc" id="L275" title="All 2 branches covered.">        return lineasEliminadas &gt;= lineasParaFinalizar;</span>
     }
     
     public void incrementarLineasEliminadas(int cantidad) {
-<span class="fc" id="L282">        lineasEliminadas += cantidad;</span>
-<span class="fc bfc" id="L283" title="All 2 branches covered.">        if (verificarFinDelJuego()) {</span>
-<span class="fc" id="L284">            JuegoTerminado = true;</span>
+<span class="fc" id="L279">        lineasEliminadas += cantidad;</span>
+<span class="fc bfc" id="L280" title="All 2 branches covered.">        if (verificarFinDelJuego()) {</span>
+<span class="fc" id="L281">            JuegoTerminado = true;</span>
         }
-<span class="fc" id="L286">    }</span>
+<span class="fc" id="L283">    }</span>
     
     public void setLineasParaFinalizar(int lineas) {
-<span class="fc" id="L289">        this.lineasParaFinalizar = lineas;</span>
-<span class="fc" id="L290">    }</span>
-
-   
-    
-
+<span class="fc" id="L286">        this.lineasParaFinalizar = lineas;</span>
+<span class="fc" id="L287">    }</span>
 
 }
 

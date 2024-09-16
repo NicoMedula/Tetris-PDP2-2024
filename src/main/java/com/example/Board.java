@@ -59,32 +59,37 @@ public class Board{
     }
     }
 
+    public IPiece getPiezaActual() {
+        return piezaActual;
+    }
+
+    public void agregarPiezaRandom(int numero){
+        switch(numero){
+            case 0: piezaActual = new PieceSquare(); break;
+
+            case 1: piezaActual = new PieceT(); break;
+
+            case 2: piezaActual = new PieceStick(); break;
+
+            case 3: piezaActual = new PieceEleLeft(); break;
+
+            case 4: piezaActual = new PieceEleRight(); break;
+
+            case 5: piezaActual = new PieceDogLeft(); break;
+            
+            case 6: piezaActual = new PieceDogRight(); break;
+        }
+    }
+
     public boolean agregarPiezaRandom(){
         
         int randomPieza = random.nextInt(7);
 
-        IPiece pieza = null;
+        agregarPiezaRandom(randomPieza);
 
-        switch(randomPieza){
-            case 0: pieza = new PieceSquare(); break;
-
-            case 1: pieza = new PieceT(); break;
-
-            case 2: pieza = new PieceStick(); break;
-
-            case 3: pieza = new PieceEleLeft(); break;
-
-            case 4: pieza = new PieceEleRight(); break;
-
-            case 5: pieza = new PieceDogLeft(); break;
-            
-            case 6: pieza = new PieceDogRight(); break;
-        }
-
-        piezaActual=pieza;
         piezaActual.getPieza();
 
-        if (agregarPiezaEspecifica(pieza) && piezaActual!=null) {
+        if (agregarPiezaEspecifica(piezaActual) && piezaActual!=null) {
             return true;
         } else {
             return false;
@@ -135,14 +140,6 @@ public class Board{
     
 
     public void bajarPieza() {
-        
-        if (piezaActual == null || piezaActual.getForma() == null) {
-            if (!agregarPiezaRandom()) {
-                
-                agregarPiezaRandom();
-            }
-        }
-    
         
         int[][] formaPieza = piezaActual.getForma();
     

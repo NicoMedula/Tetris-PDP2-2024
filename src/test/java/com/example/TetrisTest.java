@@ -602,7 +602,84 @@ public class TetrisTest {
     //--------------- TEST DEL TABLERO ----------------------------------------------------------------//
     // ------------------------------------------------------------------------------------------------//
 
-    
+    @Test
+    public void agregar_pieza_random_de_forma_especifica_caso_0_Test() {
+        Board board = new Board();
+        board.setBoard();
+
+        board.agregarPiezaRandom(0); // Case 0: PieceSquare
+        IPiece piezaActual = board.getPiezaActual();
+
+        assertTrue(piezaActual instanceof PieceSquare);
+    }
+
+    @Test
+    public void agregar_pieza_random_de_forma_especifica_caso_1_Test() {
+        Board board = new Board();
+        board.setBoard();
+
+        board.agregarPiezaRandom(1); // Case 1: PieceT
+        IPiece piezaActual = board.getPiezaActual();
+
+        assertTrue(piezaActual instanceof PieceT);
+    }
+
+    @Test
+    public void agregar_pieza_random_de_forma_especifica_caso_2_Test() {
+        Board board = new Board();
+        board.setBoard();
+
+        board.agregarPiezaRandom(2); // Case 1: PieceStick
+        IPiece piezaActual = board.getPiezaActual();
+
+        assertTrue(piezaActual instanceof PieceStick);
+    }
+
+    @Test
+    public void agregar_pieza_random_de_forma_especifica_caso_3_Test() {
+        Board board = new Board();
+        board.setBoard();
+
+        board.agregarPiezaRandom(3); // Case 3: PieceEleLeft
+        IPiece piezaActual = board.getPiezaActual();
+
+        assertTrue(piezaActual instanceof PieceEleLeft);
+    }
+
+    @Test
+    public void agregar_pieza_random_de_forma_especifica_caso_4_Test() {
+        Board board = new Board();
+        board.setBoard();
+
+        board.agregarPiezaRandom(4); // Case 4: PieceEleRight
+        IPiece piezaActual = board.getPiezaActual();
+
+        assertTrue(piezaActual instanceof PieceEleRight);
+    }
+
+    @Test
+    public void agregar_pieza_random_de_forma_especifica_caso_5_Test() {
+        Board board = new Board();
+        board.setBoard();
+
+        board.agregarPiezaRandom(5); // Case 5: PieceDogLeft
+        IPiece piezaActual = board.getPiezaActual();
+
+        assertTrue(piezaActual instanceof PieceDogLeft);
+    }
+
+    @Test
+    public void agregar_pieza_random_de_forma_especifica_caso_6_Test() {
+        Board board = new Board();
+        board.setBoard();
+
+        board.agregarPiezaRandom(6); // Case 6: PieceDogRight
+        IPiece piezaActual = board.getPiezaActual();
+
+        assertTrue(piezaActual instanceof PieceDogRight);
+    }
+
+
 
     @SuppressWarnings("deprecation")
     @Test
@@ -687,9 +764,6 @@ public class TetrisTest {
         Board b1 = new Board();
         b1.setBoard();
 
-    // Vamos a bloquear el centro del tablero.
-    // Supongamos que `colocarPiezaManual` es un método que permite añadir una pieza en una ubicación arbitraria.
-    // Aquí ponemos algo en la fila 0, ocupando las columnas centrales.
     int[][] piezaBloqueo = { { 1, 1, 1 } };
     b1.ColocarPieza(piezaBloqueo, 0, (20 / 2) - 1);
     
