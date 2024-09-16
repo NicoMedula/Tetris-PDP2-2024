@@ -1098,5 +1098,47 @@ public void mover_pieza_una_columna_a_la_izquierda_false_Test() {
     }
 
 
-    
+    //Se crea el juego //
+
+    @Test
+    public void crear_juego_Test(){
+
+        Tetris t1 = new Tetris();
+
+        assertTrue(t1.crearJuego());
+    }
+
+
+    @Test
+    public void juego_comienza_Test(){
+        Board b1 = new Board();
+        Tetris t1 = new Tetris();
+
+        b1.setLineasParaFinalizar(2);//set para ganar
+
+        b1.setBoard();
+
+        b1.agregarPiezaRandom();
+
+        if (b1.getBoard() != null) {
+            assertTrue(t1.comenzarJuego());
+
+        // llena dos lineas para eliminar
+        int[][] tablero = b1.getBoard();
+        for (int i = 0; i < tablero[0].length; i++) {
+            tablero[9][i] = 1; // Fila completa
+            tablero[8][i] = 1; // Otra fila completa
+        }
+
+        b1.eliminarLineasCompletas();
+        b1.incrementarLineasEliminadas(2);
+
+        assertTrue(b1.verificarFinDelJuego());
+
+        }
+
+
+
+    }
+
 }

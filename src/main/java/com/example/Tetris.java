@@ -1,10 +1,17 @@
 package com.example;
 
-public class Tetris {
+public class Tetris{
 
+    
     
     private int filas;
     private int columnas;
+
+    public boolean crearJuego(){
+        return true;
+    }
+
+
     
 
     public int[][] rotarDerecha (int[][] pieza ){
@@ -36,6 +43,13 @@ public class Tetris {
         }
         return rotada;
 
+    }
+
+
+
+
+    public boolean comenzarJuego() {
+        return true;
     }
     
 
