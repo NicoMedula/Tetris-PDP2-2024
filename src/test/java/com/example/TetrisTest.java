@@ -1140,6 +1140,41 @@ public void mover_pieza_una_columna_a_la_izquierda_false_Test() {
 
 
 
+    }   
+
+    @Test
+    public void perder_el_juego_Test() {
+
+        Board board = new Board();
+        Reloj reloj = new Reloj(board);
+
+        board.setBoard();
+
+        PieceStick p = new PieceStick();
+
+
+        // Agregamos varias piezas hasta que no puedan colocarse más
+        while (!board.getTerminoelJuego()) {
+            board.agregarPiezaEspecifica(p); // se utiliza la stick para facilitar
+
+            for (int i = 0; i < 20; i++) {
+                reloj.setTic(); // Cada tic hace que la pieza baje
+                reloj.ticReloj(); // Ejecuta bajada
+            }
+        }
+        
+        // se termina el juego por acumulamiento
+        assertTrue(board.getTerminoelJuego());
+    }
+
+    @Test
+    public void ganar_el_juego_Test() {
+
+        
     }
 
 }
+
+
+
+

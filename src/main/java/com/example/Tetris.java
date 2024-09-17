@@ -1,5 +1,9 @@
 package com.example;
 
+
+
+import com.example.Pieces.PieceStick;
+
 public class Tetris{
 
     
@@ -51,6 +55,7 @@ public class Tetris{
     public boolean comenzarJuego() {
         return true;
     }
+    
     
 
 }
