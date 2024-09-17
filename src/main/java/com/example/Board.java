@@ -110,15 +110,18 @@ public class Board{
 
         agregarPiezaRandom(randomPieza);
 
+
+
         piezaActual.getPieza();
 
         if ( piezaActual.getForma() == null ) {
             agregarPiezaRandom();
         }
 
-        if (agregarPiezaEspecifica(piezaActual) && piezaActual!=null) {
+        if (agregarPiezaEspecifica(piezaActual) && piezaActual.getForma()!=null) {
             return true;
         } else {
+        
             return false;
         }
     }
