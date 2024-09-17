@@ -110,15 +110,18 @@ public class Board{
 
         agregarPiezaRandom(randomPieza);
 
+
+
         piezaActual.getPieza();
 
         if ( piezaActual.getForma() == null ) {
             agregarPiezaRandom();
         }
 
-        if (agregarPiezaEspecifica(piezaActual) && piezaActual!=null) {
+        if (agregarPiezaEspecifica(piezaActual) && piezaActual.getForma()!=null) {
             return true;
         } else {
+        
             return false;
         }
     }
@@ -266,7 +269,7 @@ public class Board{
 
     public void eliminarLineasCompletas() {
         int filasEliminadas = 0;
-    
+        incrementarLineasEliminadas(1);
         for (int i = 0; i < board.length; i++) {
             boolean lineaCompleta = true;
     
@@ -278,6 +281,7 @@ public class Board{
             }
     
             if (lineaCompleta) {
+                
                 filasEliminadas++;
                 bajarLineas(i);
             }

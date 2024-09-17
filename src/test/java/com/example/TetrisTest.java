@@ -1170,7 +1170,34 @@ public void mover_pieza_una_columna_a_la_izquierda_false_Test() {
     @Test
     public void ganar_el_juego_Test() {
 
+        Board board = new Board();
+        Reloj reloj = new Reloj(board);
+
+        // Inicializa el tablero
+        board.setBoard();
+
+        // Simula que ya se han eliminado 4 líneas
+        board.incrementarLineasEliminadas(4);
+
+        int[][] tablero = board.getBoard();
+        for (int i = 0; i < 19; i++) { // Llenamos las primeras 19 columnas de la fila 9
+            tablero[9][i] = 1;
+        }
+
+        // Coloca una pieza vertical (stick) para llenar las 10 filas de la primera columna y completar el juego
+        board.agregarPiezaEspecifica(new PieceStick()); // Usa PieceStick para simplificar
+
+        // Simula los tics para que la pieza baje
+        for (int i = 0; i < 20; i++) {
+            reloj.setTic(); // Cada tic hace que la pieza baje
+            reloj.ticReloj(); // Ejecuta la acción de bajada
+        }
+
+        board.eliminarLineasCompletas();
         
+
+        // Verifica si se han completado las líneas necesarias para ganar
+        assertTrue(board.getTerminoelJuego());
     }
 
 }
