@@ -1,77 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.TetrisTest" time="0.096" tests="48" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.TetrisTest" time="0.039" tests="48" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="java.specification.version" value="17"/>
-    <property name="sun.cpu.isalist" value="amd64"/>
-    <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\nicol\OneDrive\Escritorio\TP1-Tetris-Paradigmas2\demo\target\test-classes;C:\Users\nicol\OneDrive\Escritorio\TP1-Tetris-Paradigmas2\demo\target\classes;C:\Users\nicol\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\nicol\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
-    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.version" value="22"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/nicolasmedula/Desktop/FACULTAD/Tetris TP1/Tetris-PDP2-2024/target/test-classes:/Users/nicolasmedula/Desktop/FACULTAD/Tetris TP1/Tetris-PDP2-2024/target/classes:/Users/nicolasmedula/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/nicolasmedula/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="user.variant" value=""/>
-    <property name="java.vendor.url" value="https://java.oracle.com/"/>
-    <property name="user.timezone" value="America/Buenos_Aires"/>
-    <property name="os.name" value="Windows 11"/>
-    <property name="java.vm.specification.version" value="17"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="22"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="user.country" value="ES"/>
-    <property name="sun.boot.library.path" value="C:\Users\nicol\OneDrive\Escritorio\jdk-17_windows-x64_bin\jdk-17.0.12\bin"/>
-    <property name="sun.java.command" value="C:\Users\nicol\AppData\Local\Temp\surefire15446095268061208219\surefirebooter16179687647457942909.jar C:\Users\nicol\AppData\Local\Temp\surefire15446095268061208219 2024-09-17T18-54-50_068-jvmRun1 surefire5044038030337678601tmp surefire_06201071601799185298tmp"/>
+    <property name="user.country" value="AR"/>
+    <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/22.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/nicolasmedula/Desktop/FACULTAD/Tetris TP1/Tetris-PDP2-2024/target/surefire/surefirebooter15363272527738483449.jar /Users/nicolasmedula/Desktop/FACULTAD/Tetris TP1/Tetris-PDP2-2024/target/surefire 2024-09-18T20-41-40_097-jvmRun1 surefire6681492637562333122tmp surefire_015682523117328752306tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\nicol\OneDrive\Escritorio\TP1-Tetris-Paradigmas2\demo\target\test-classes;C:\Users\nicol\OneDrive\Escritorio\TP1-Tetris-Paradigmas2\demo\target\classes;C:\Users\nicol\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\nicol\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="surefire.test.class.path" value="/Users/nicolasmedula/Desktop/FACULTAD/Tetris TP1/Tetris-PDP2-2024/target/test-classes:/Users/nicolasmedula/Desktop/FACULTAD/Tetris TP1/Tetris-PDP2-2024/target/classes:/Users/nicolasmedula/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/nicolasmedula/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="C:\Users\nicol"/>
+    <property name="user.home" value="/Users/nicolasmedula"/>
     <property name="user.language" value="es"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.version.date" value="2024-07-16"/>
-    <property name="java.home" value="C:\Users\nicol\OneDrive\Escritorio\jdk-17_windows-x64_bin\jdk-17.0.12"/>
-    <property name="file.separator" value="\"/>
-    <property name="basedir" value="C:\Users\nicol\OneDrive\Escritorio\TP1-Tetris-Paradigmas2\demo"/>
+    <property name="java.home" value="/opt/homebrew/Cellar/openjdk/22.0.2/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/nicolasmedula/Desktop/FACULTAD/Tetris TP1/Tetris-PDP2-2024"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\nicol\AppData\Local\Temp\surefire15446095268061208219\surefirebooter16179687647457942909.jar"/>
-    <property name="user.script" value=""/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/nicolasmedula/Desktop/FACULTAD/Tetris TP1/Tetris-PDP2-2024/target/surefire/surefirebooter15363272527738483449.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="17.0.12+8-LTS-286"/>
-    <property name="user.name" value="nicol"/>
-    <property name="path.separator" value=";"/>
-    <property name="os.version" value="10.0"/>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="file.encoding" value="Cp1252"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="localRepository" value="C:\Users\nicol\.m2\repository"/>
-    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
-    <property name="java.io.tmpdir" value="C:\Users\nicol\AppData\Local\Temp\"/>
-    <property name="java.version" value="17.0.12"/>
-    <property name="user.dir" value="C:\Users\nicol\OneDrive\Escritorio\TP1-Tetris-Paradigmas2\demo"/>
-    <property name="os.arch" value="amd64"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="22.0.2"/>
+    <property name="user.name" value="nicolasmedula"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/nicolasmedula/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/hq/hhfc8fjj0n34rykzpgmz2s8m0000gn/T/"/>
+    <property name="java.version" value="22.0.2"/>
+    <property name="user.dir" value="/Users/nicolasmedula/Desktop/FACULTAD/Tetris TP1/Tetris-PDP2-2024"/>
+    <property name="os.arch" value="aarch64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="sun.os.patch.level" value=""/>
-    <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Users\nicol\OneDrive\Escritorio\jdk-17_windows-x64_bin\jdk-17.0.12\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Python312\Scripts\;C:\Program Files\Python312\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\dotnet\;C:\msys64\mingw64\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Users\nicol\OneDrive\Escritorio\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\nicol\OneDrive\Escritorio\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\nicol\OneDrive\Escritorio\apache-maven-3.9.9-bin\apache-maven-3.9.9;C:\Users\nicol\OneDrive\Escritorio\jdk-17_windows-x64_bin\jdk-17.0.12\bin;C:\Users\nicol\OneDrive\Escritorio\jdk-17_windows-x64_bin\jdk-17.0.12\bin;C:\Users\nicol\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\nicol\AppData\Local\Programs\Python\Python311\;C:\Users\nicol\AppData\Local\Microsoft\WindowsApps;C:\MinGW\bin;C:\Users\nicol\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Python312;C:\Users\nicol\AppData\Roaming\npm;C:\Users\nicol\AppData\Local\GitHubDesktop\bin;C:\Users\nicol\OneDrive\Escritorio\apache-maven-3.9.9-bin.zip\apache-maven-3.9.9\bin;;C:\Users\nicol\AppData\Roaming\Programs\Zero Install;."/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/nicolasmedula/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.version" value="17.0.12+8-LTS-286"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="java.class.version" value="61.0"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="22.0.2"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="juego_comienza_Test" classname="com.example.TetrisTest" time="0.008"/>
-  <testcase name="rotar_pieza_T_a_la_izquierda_Test" classname="com.example.TetrisTest" time="0.004"/>
-  <testcase name="rotar_pieza_dog_left_a_la_izquierda_y_a_la_derecha_Test" classname="com.example.TetrisTest" time="0.002"/>
+  <testcase name="juego_comienza_Test" classname="com.example.TetrisTest" time="0.003"/>
+  <testcase name="rotar_pieza_T_a_la_izquierda_Test" classname="com.example.TetrisTest" time="0"/>
+  <testcase name="rotar_pieza_dog_left_a_la_izquierda_y_a_la_derecha_Test" classname="com.example.TetrisTest" time="0.001"/>
   <testcase name="inicializar_tablero_en_0_Test" classname="com.example.TetrisTest" time="0"/>
-  <testcase name="mover_pieza_actual_1_columna_a_la_derecha_Test" classname="com.example.TetrisTest" time="0.003"/>
+  <testcase name="mover_pieza_actual_1_columna_a_la_derecha_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="ganar_el_juego_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="rotar_pieza_Stick_a_la_izquierda_y_a_la_derecha_Test" classname="com.example.TetrisTest" time="0"/>
-  <testcase name="mover_pieza_una_columna_a_la_izquierda_false_Test" classname="com.example.TetrisTest" time="0"/>
-  <testcase name="rotar_pieza_ele_left_a_la_izquierda_4_rotaciones_Test" classname="com.example.TetrisTest" time="0.001"/>
-  <testcase name="la_pieza_actual_baja_luego_de_dos_tic_Test" classname="com.example.TetrisTest" time="0.001"/>
-  <testcase name="crear_pieza_dog_derecha_e_izquierda_Test" classname="com.example.TetrisTest" time="0.001"/>
+  <testcase name="mover_pieza_una_columna_a_la_izquierda_false_Test" classname="com.example.TetrisTest" time="0.001"/>
+  <testcase name="rotar_pieza_ele_left_a_la_izquierda_4_rotaciones_Test" classname="com.example.TetrisTest" time="0"/>
+  <testcase name="la_pieza_actual_baja_luego_de_dos_tic_Test" classname="com.example.TetrisTest" time="0"/>
+  <testcase name="crear_pieza_dog_derecha_e_izquierda_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="rotar_pieza_ele_right_a_la_derecha_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="metodo_tablero_devolver_get_Test" classname="com.example.TetrisTest" time="0"/>
-  <testcase name="perder_el_juego_Test" classname="com.example.TetrisTest" time="0"/>
+  <testcase name="perder_el_juego_Test" classname="com.example.TetrisTest" time="0.001"/>
   <testcase name="mover_pieza_actual_1_columna_a_la_izquierda_true_Test" classname="com.example.TetrisTest" time="0"/>
-  <testcase name="rotar_pieza_ele_right_a_la_izquierda_4_rotaciones_Test" classname="com.example.TetrisTest" time="0.002"/>
+  <testcase name="rotar_pieza_ele_right_a_la_izquierda_4_rotaciones_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="el_juego_finaliza_si_no_se_puede_agregar_mas_piezas_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="eliminar_linea_completa_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="bajar_linea_Test" classname="com.example.TetrisTest" time="0"/>
@@ -81,7 +83,7 @@
   <testcase name="crear_tablero_10_x_20_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="crear_pieza_Stick_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="crear_pieza_ele_derecha_e_izquierda_Test" classname="com.example.TetrisTest" time="0"/>
-  <testcase name="crear_pieza_T_Test" classname="com.example.TetrisTest" time="0.001"/>
+  <testcase name="crear_pieza_T_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="rotar_pieza_T_a_la_derecha_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="agregar_pieza_random_de_forma_especifica_caso_0_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="agregar_pieza_random_de_forma_especifica_caso_1_Test" classname="com.example.TetrisTest" time="0"/>
@@ -89,19 +91,19 @@
   <testcase name="reloj_actualiza_los_tics_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="agregar_pieza_random_de_forma_especifica_caso_3_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="se_puede_agregar_pieza_en_el_centro_False_Test" classname="com.example.TetrisTest" time="0"/>
-  <testcase name="agregar_pieza_random_de_forma_especifica_caso_4_Test" classname="com.example.TetrisTest" time="0.001"/>
+  <testcase name="agregar_pieza_random_de_forma_especifica_caso_4_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="agregar_pieza_random_al_tablero_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="agregar_pieza_random_de_forma_especifica_caso_5_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="agregar_pieza_random_de_forma_especifica_caso_6_Test" classname="com.example.TetrisTest" time="0"/>
-  <testcase name="rotar_pieza_ele_left_a_la_derecha_4_rotaciones_Test" classname="com.example.TetrisTest" time="0"/>
+  <testcase name="rotar_pieza_ele_left_a_la_derecha_4_rotaciones_Test" classname="com.example.TetrisTest" time="0.001"/>
   <testcase name="agregar_pieza_random_al_tablero_false_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="rotar_pieza_dog_right_a_la_izquierda_y_a_la_derecha_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="mover_pieza_una_columna_a_la_derecha_false_Test" classname="com.example.TetrisTest" time="0"/>
-  <testcase name="el_reloj_no_actualiza_los_tics_Test" classname="com.example.TetrisTest" time="0.001"/>
+  <testcase name="el_reloj_no_actualiza_los_tics_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="se_detiene_pieza_metodo_true_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="crear_juego_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="se_puede_agregar_pieza_especifica_en_el_tablero_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="configurar_cantidad_lineas_para_finalizar_juego_Test" classname="com.example.TetrisTest" time="0"/>
   <testcase name="crear_pieza_Square_Test" classname="com.example.TetrisTest" time="0"/>
-  <testcase name="la_pieza_puede_bajar_Test" classname="com.example.TetrisTest" time="0"/>
+  <testcase name="la_pieza_puede_bajar_Test" classname="com.example.TetrisTest" time="0.001"/>
 </testsuite>

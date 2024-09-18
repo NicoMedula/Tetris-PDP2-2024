@@ -114,8 +114,8 @@ import com.example.Pieces.PieceT;
 
 <span class="fc" id="L115">        piezaActual.getPieza();</span>
 
-<span class="pc bpc" id="L117" title="1 of 2 branches missed.">        if ( piezaActual.getForma() == null ) {</span>
-<span class="nc" id="L118">            agregarPiezaRandom();</span>
+<span class="fc bfc" id="L117" title="All 2 branches covered.">        if ( piezaActual.getForma() == null ) {</span>
+<span class="fc" id="L118">            agregarPiezaRandom();</span>
         }
 
 <span class="pc bpc" id="L121" title="1 of 4 branches missed.">        if (agregarPiezaEspecifica(piezaActual) &amp;&amp; piezaActual.getForma()!=null) {</span>
@@ -269,7 +269,7 @@ import com.example.Pieces.PieceT;
 
     public void eliminarLineasCompletas() {
 <span class="fc" id="L271">        int filasEliminadas = 0;</span>
-    
+<span class="fc" id="L272">        incrementarLineasEliminadas(1);</span>
 <span class="fc bfc" id="L273" title="All 2 branches covered.">        for (int i = 0; i &lt; board.length; i++) {</span>
 <span class="fc" id="L274">            boolean lineaCompleta = true;</span>
     
@@ -281,40 +281,41 @@ import com.example.Pieces.PieceT;
             }
     
 <span class="fc bfc" id="L283" title="All 2 branches covered.">            if (lineaCompleta) {</span>
-<span class="fc" id="L284">                filasEliminadas++;</span>
-<span class="fc" id="L285">                bajarLineas(i);</span>
+                
+<span class="fc" id="L285">                filasEliminadas++;</span>
+<span class="fc" id="L286">                bajarLineas(i);</span>
             }
         }
     
-<span class="fc" id="L289">    }</span>
+<span class="fc" id="L290">    }</span>
 
     private void bajarLineas(int fila) {
-<span class="fc bfc" id="L292" title="All 2 branches covered.">        for (int i = fila; i &gt; 0; i--) {</span>
-<span class="fc bfc" id="L293" title="All 2 branches covered.">            for (int j = 0; j &lt; board[i].length; j++) {</span>
-<span class="fc" id="L294">                board[i][j] = board[i - 1][j];</span>
+<span class="fc bfc" id="L293" title="All 2 branches covered.">        for (int i = fila; i &gt; 0; i--) {</span>
+<span class="fc bfc" id="L294" title="All 2 branches covered.">            for (int j = 0; j &lt; board[i].length; j++) {</span>
+<span class="fc" id="L295">                board[i][j] = board[i - 1][j];</span>
             }
         }
     
         // La primera fila siempre debe quedar vacía
-<span class="fc bfc" id="L299" title="All 2 branches covered.">        for (int j = 0; j &lt; board[0].length; j++) {</span>
-<span class="fc" id="L300">            board[0][j] = 0;</span>
+<span class="fc bfc" id="L300" title="All 2 branches covered.">        for (int j = 0; j &lt; board[0].length; j++) {</span>
+<span class="fc" id="L301">            board[0][j] = 0;</span>
         }
-<span class="fc" id="L302">    }</span>
+<span class="fc" id="L303">    }</span>
 
     public boolean verificarFinDelJuego() {
-<span class="fc bfc" id="L305" title="All 2 branches covered.">        return lineasEliminadas &gt;= lineasParaFinalizar;</span>
+<span class="fc bfc" id="L306" title="All 2 branches covered.">        return lineasEliminadas &gt;= lineasParaFinalizar;</span>
     }
     
     public void incrementarLineasEliminadas(int cantidad) {
-<span class="fc" id="L309">        lineasEliminadas += cantidad;</span>
-<span class="fc bfc" id="L310" title="All 2 branches covered.">        if (verificarFinDelJuego()) {</span>
-<span class="fc" id="L311">            JuegoTerminado = true;</span>
+<span class="fc" id="L310">        lineasEliminadas += cantidad;</span>
+<span class="fc bfc" id="L311" title="All 2 branches covered.">        if (verificarFinDelJuego()) {</span>
+<span class="fc" id="L312">            JuegoTerminado = true;</span>
         }
-<span class="fc" id="L313">    }</span>
+<span class="fc" id="L314">    }</span>
     
     public void setLineasParaFinalizar(int lineas) {
-<span class="fc" id="L316">        this.lineasParaFinalizar = lineas;</span>
-<span class="fc" id="L317">    }</span>
+<span class="fc" id="L317">        this.lineasParaFinalizar = lineas;</span>
+<span class="fc" id="L318">    }</span>
 
 }
 
